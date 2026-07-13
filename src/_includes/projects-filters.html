@@ -1,0 +1,13 @@
+        {%- assign categories = collections.categories
+        %}
+        <nav class="column-2d-l">
+          <ul class="controls controls-projects layout-1d">
+            {%- for category in categories %}
+            <li class="controls-item element-1d
+              {%- if layout == 'project' and category.data.category == 'Favorite' %} current{% endif %}
+              {%- if layout == 'categories' and category.data.title == title  %} current{% endif %}">
+              <a href="{{ category.url | prepend: site.baseurl }}">{{ category.data.category }}</a>
+            </li>
+            {%- endfor %}
+          </ul>
+        </nav>

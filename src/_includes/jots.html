@@ -1,0 +1,16 @@
+    {%- comment %} whitespace {%- endcomment %}
+    <div class="canvas-jots background">
+      <section class="jots layout-2d">
+
+        <header class="jots-head column-2d-l typo-sl serif">
+            <h2><span class="color-1 sans">Last jots</span></h2>
+            <p>As an <em>avid</em> reader, I&nbsp;jot down bits from food for thought pieces on design and development to&nbsp;revisit and reflect on later: <a href="{{ site.baseurl }}/jots/index.html">browse more</a>.</p>
+        </header>
+
+        <div class="column-2d-l separator"></div>
+
+        {% include jots-home-items.html jotLimit = 26 %}
+        {% include jots-home-pagination.html %}
+
+      </section>
+    </div>

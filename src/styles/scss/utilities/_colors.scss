@@ -1,0 +1,147 @@
+/* Copyright (c) 2017 Andrea Buran [www.andreaburan.com]. All rights reserved */
+
+/*
+** Colors
+** 0 1 | 2 3 | 4 5 | 6 7 | 8 9 | a b | c d | e f
+** https://www.hsluv.org/
+*/
+
+$black:                         #000;
+$white:                         #fff;
+
+$l-color-1:                     #e83c5a;
+$d-color-1:                     #f66375;
+
+$l-color-1-darker:              #ba2342;
+$d-color-1-darker:              #d93251;
+
+$l-color-2:                     #856af5;
+$d-color-2:                     #9888fa;
+
+$l-color-2-darker:              #6a3ee0;
+$d-color-2-darker:              #7c5bf1;
+
+/*
+** Typography
+*/
+
+$l-strong-type-color:           rgba($black, 0.92);
+$d-strong-type-color:           rgba($white, 0.88);
+
+$l-type-color:                  rgba($black, 0.92);
+$d-type-color:                  rgba($white, 0.88);
+
+$l-light-type-color:            rgba($black, 0.92);
+$d-light-type-color:            rgba($white, 0.88);
+
+$l-selected-type-color:         rgba($black, 0.92);
+$d-selected-type-color:         rgba($white, 0.96);
+
+$l-placeholder-type-color:      rgba($black, 0.24);
+$d-placeholder-type-color:      rgba($white, 0.24); // to be defined
+
+$l-button-type-color:           rgba($white, 0.96);
+$d-button-type-color:           rgba($black, 0.92);
+
+/*
+** Backgrounds
+*/
+
+$l-background-color:            #fbfbfb;
+$d-background-color:            #252525;
+
+$l-background-color-darker:     #efefef;
+$d-background-color-darker:     #1b1b1b;
+
+$l-selected-background-color:   rgba($black, 0.06);
+$d-selected-background-color:   rgba($white, 0.08);
+
+$l-field-background-color:      $l-background-color;
+$d-field-background-color:      $d-background-color;
+
+$l-button-background-color:     $l-strong-type-color;
+$d-button-background-color:     $d-strong-type-color;
+
+$l-picture-background-color:    rgba($black, 0.06);
+$d-picture-background-color:    rgba($white, 0.06);
+
+$l-balloon-background-color:    rgba($black, 0.04);
+$d-balloon-background-color:    rgba($white, 0.06);
+
+/*
+** Borders
+*/
+
+$l-border-color:                rgba($black, 0.92);
+$d-border-color:                rgba($white, 0.40);
+
+$l-field-border-color:          rgba($black, 0.24);
+$d-field-border-color:          rgba($white, 0.32);
+
+$l-strong-field-border-color:   rgba($black, 0.92);
+$d-strong-field-border-color:   rgba($white, 0.92);
+
+$l-focused-border-color:        $l-color-2;
+$d-focused-border-color:        $d-color-2;
+
+/*
+** Buttons
+*/
+
+$l-button-type-color:                   $l-background-color;
+$d-button-type-color:                   $d-background-color;
+
+$l-button-border-color:                 $l-strong-type-color;
+$d-button-border-color:                 $d-strong-type-color;
+
+$l-button-background-color:             $l-strong-type-color;
+$d-button-background-color:             $d-strong-type-color;
+
+$l-button-background-color-hovered:     $l-color-1;
+$d-button-background-color-hovered:     $d-color-1;
+
+$l-button-background-color-activated:   $l-color-1-darker;
+$d-button-background-color-activated:   $d-color-1-darker;
+
+/*
+** Code
+*/
+
+$l-code-type-color:             rgba($black, 0.76);
+$d-code-type-color:             rgba($white, 0.72);
+
+$l-code-type-color-light:       rgba($black, 0.60);
+$d-code-type-color-light:       rgba($white, 0.56);
+
+$l-code-type-color-lighter:     rgba($black, 0.44);
+$d-code-type-color-lighter:     rgba($white, 0.40);
+
+$l-code-red:                    #c43a2a;
+$d-code-red:                    #f98f7e;
+
+$l-code-orange:                 #a55e11;
+$d-code-orange:                 #f49842;
+
+$l-code-yellow:                 #8a6e15;
+$d-code-yellow:                 #d5ac26;
+
+$l-code-green:                  #318549;
+$d-code-green:                  #4bce73;
+
+$l-code-cyan:                   #17808f;
+$d-code-cyan:                   #1eada1;
+
+$l-code-blue:                   #097FBA;
+$d-code-blue:                   #5fbbf7;
+
+$l-code-purple:                 #8b3be4;
+$d-code-purple:                 #bf9cfb;
+
+$l-code-magenta:                #b620b0;
+$d-code-magenta:                #ec85e4;
+
+$l-code-background-color:       rgba($black, 0.04);
+$d-code-background-color:       rgba($white, 0.04);
+
+$l-code-selected-background-color:  rgba($black, 0.04);
+$d-code-selected-background-color:  rgba($white, 0.04);

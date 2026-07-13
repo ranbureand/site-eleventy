@@ -1,0 +1,11 @@
+---
+layout: jots
+mode: dark
+title: All jots
+tags: jotsPage
+pagination:
+  data: collections.jotsByNumber
+  size: 26
+  addAllPagesToCollections: true
+permalink: "/jots/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber | plus: 1 }}/{% endif %}index.html"
+---

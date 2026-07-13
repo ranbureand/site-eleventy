@@ -1,0 +1,37 @@
+      {%- comment %} whitespace {%- endcomment %}
+      <div class="column-2d-l separator"></div>
+      {%- assign posts = collections.posts | reverse %}
+
+      {%- for post in posts %}
+        {%- if page.url == '/' %}
+          {%- assign currentPostIndex = 1 %}
+        {%- elsif post.data.title == title %}
+          {%- assign currentPostIndex = forloop.index %}
+        {%- endif %}
+      {%- endfor %}
+
+      {%- assign totalPosts = collections.posts | size
+      %}
+      {%- assign prevPostIndex = currentPostIndex
+        | plus: 1
+      %}
+      {%- assign nextPostIndex = currentPostIndex
+        | minus:
+      1 %}
+
+      {%- if prevPostIndex > totalPosts %}
+{% include post-pagination-next.html nextPostIndex = nextPostIndex %}
+
+        <div class="page-prev column-2d-page-2">
+          <span>—</span>
+        </div>
+      {%- elsif nextPostIndex < 1 %}
+
+        <div class="page-next column-2d-page-1">
+          <span>—</span>
+        </div>
+{% include post-pagination-prev.html prevPostIndex = prevPostIndex %}
+      {%- else %}
+{% include post-pagination-next.html nextPostIndex = nextPostIndex %}
+{% include post-pagination-prev.html prevPostIndex = prevPostIndex %}
+      {%- endif %}

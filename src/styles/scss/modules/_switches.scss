@@ -1,0 +1,123 @@
+/* Copyright (c) 2017 Andrea Buran [www.andreaburan.com]. All rights reserved */
+
+/*
+** Switches
+*/
+
+.switch {
+  position: relative;
+
+  display: inline-block;
+  float: right;
+
+  width: em($base-unit*10, $m-small-size);
+  height: em($base-unit*5, $m-small-size);
+  margin-top: em($base-unit/2, $m-small-size);
+
+  @include min-screen(col(8)) {
+    width: em($base-unit*10, $d-small-size);
+    height: em($base-unit*5, $d-small-size);
+    margin-top: em($base-unit/2, $d-small-size);
+  }
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  cursor: pointer;
+  transition: $duration;
+  transition-timing-function: ease-out;
+  transition-property: background-color;
+
+  border-radius: em($m-small-line/2, $m-small-size);
+
+  &:before {
+    position: absolute;
+    bottom: em($base-unit/2, $m-small-size);
+    left: em($base-unit/2, $m-small-size);
+
+    width: em($base-unit*4, $m-small-size);
+    height: em($base-unit*4, $m-small-size);
+
+    content: "";
+    transition: $duration;
+    transition-timing-function: ease-out;
+    transition-property: transform;
+
+    border-radius: 50%;
+  }
+  @include min-screen(col(8)) {
+    border-radius: em($d-small-line/2, $d-small-size);
+
+    &:before {
+      bottom: em($base-unit/2, $d-small-size);
+      left: em($base-unit/2, $d-small-size);
+
+      width: em($base-unit*4, $d-small-size);
+      height: em($base-unit*4, $d-small-size);
+    }
+  }
+}
+
+.dark {
+  .slider {
+    &:before {
+      transform: translateX(em($base-unit*5, $d-small-size));
+    }
+  }
+}
+
+#mode-switch {
+  &:before {
+    margin-right: em($m-gut, $m-small-size);
+  }
+  @include min-screen(col(8)) {
+    &:before {
+      margin-right: em($d-gut, $d-small-size);
+    }
+  }
+}
+
+.light {
+  #mode-switch {
+    @include min-screen(col(10)) {
+      &:before {
+        content: "Dark\00a0";
+      }
+    }
+  }
+}
+
+.dark {
+  #mode-switch {
+    @include min-screen(col(10)) {
+      &:before {
+        content: "Light";
+      }
+    }
+  }
+}
+
+/*
+** Colors
+*/
+
+#mode-switch {
+  &:hover {
+    .slider {
+      background-color: var(--color-1);
+    }
+  }
+}
+
+.slider {
+  background-color: var(--light-type-color);
+
+  &:before {
+    background-color: var(--background-color);
+  }
+}

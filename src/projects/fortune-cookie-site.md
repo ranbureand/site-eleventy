@@ -1,0 +1,157 @@
+---
+order: 34
+
+layout: project
+
+title: "Fortune Cookie, Site"
+author: "Andrea Buran"
+
+time: '2014'
+
+categories: [All, Digital, Favorite, Non-Commercial, Research, Static Image]
+tags: [dream, image search results, responsive, search engines, site]
+
+preview_image: 'fortune_cookie_site_00.jpg'
+preview_color: '#6362E1'
+
+description: 'The experimental web image archive aims to replicate on a small scale how a human image search engine might work.'
+exordium: 'The experimental web image archive aims to replicate on a small scale how a human image search engine might work.'
+
+published: true
+---
+
+<div class="figures">
+    {% include image.html
+        size="xl"
+        h="1492" w="1600"
+        src="fortune_cookie_site_index_1280_00.jpg"
+        alt="A screenshot of the website Fortune Cookie."
+        color="#6362E1"
+        loading="eager"
+    %}
+</div>
+
+tags
+: {% include tags.html %}
+
+role
+: co-creator, visual/interaction designer
+
+responsibilities
+: concept, information architecture, information + interaction + visual design, back end + front end development
+
+team
+: Andrea Buran, Eleonora Sovrani
+
+<div class="figures">
+    {% include image.html
+        size="m"
+        h="1344" w="1088"
+        src="fortune_cookie_site_index_768_00.jpg"
+        alt="A screenshot of the website Fortune Cookie."
+        color="#6362E1"
+    %}
+</div>
+
+The experimental web image archive aims to replicate on a small scale how a **human image search engine**[^flesh] might work.
+
+Unlike a typical image search engine, which returns a set of images based on a user’s query, a human image search engine is **powered by multiple users** who consciously search for and return visual responses to each other[^process].
+
+For the sake of simplicity and consistency, the **replication** is kept at a **small scale**; all collaborative efforts collected through the site focus on responding to just one predefined **query word**: ***dream***.
+
+<div class="figures">
+    {% include image.html
+        size="m"
+        h="988" w="960"
+        src="fortune_cookie_site_index_360_00.jpg"
+        alt="A screenshot of the website Fortune Cookie."
+        color="#6362E1"
+    %}
+    {% include image.html
+        size="m"
+        h="988" w="960"
+        src="fortune_cookie_site_call_360_00.jpg"
+        alt="A screenshot of the website Fortune Cookie."
+        color="#6362E1"
+    %}
+</div>
+
+Web travelers are invited to populate the archive by submitting their own visual interpretation in response to the predefined query word or abstract concept *dream*.
+
+The **query word** ***dream*** was chosen because it is an **abstract** term, posing a challenge for image search engines. The query word dream was chosen because it is an abstract term, posing a challenge for image search engines. As an abstract term, it is open to **multiple subjective interpretations**[^retrieval], and an image search engine cannot know in advance which interpretation the user is truly seeking.
+
+<div class="figures">
+    {% include image.html
+        size="xl"
+        h="2142" w="1600"
+        src="fortune_cookie_site_call_1280_00.jpg"
+        alt="A screenshot of the website Fortune Cookie."
+        color="#6362E1"
+    %}
+    {% include image.html
+        size="m"
+        h="988" w="960"
+        src="fortune_cookie_site_form_360_00.jpg"
+        alt="A screenshot of the website Fortune Cookie."
+        color="#6362E1"
+    %}
+    {% include image.html
+        size="m"
+        h="988" w="960"
+        src="fortune_cookie_site_form_360_01.jpg"
+        alt="A screenshot of the website Fortune Cookie."
+        color="#6362E1"
+    %}
+    {% include image.html
+        size="m"
+        h="988" w="960"
+        src="fortune_cookie_site_form_360_02.jpg"
+        alt="A screenshot of the website Fortune Cookie."
+        color="#6362E1"
+    %}
+    {% include image.html
+        size="m"
+        h="988" w="960"
+        src="fortune_cookie_site_archive_360_00.jpg"
+        alt="A screenshot of the website Fortune Cookie."
+        color="#6362E1"
+    %}
+    {% include image.html
+        size="xl"
+        h="1893" w="1600"
+        src="fortune_cookie_site_archive_1280_00.jpg"
+        alt="A screenshot of the website Fortune Cookie."
+        color="#6362E1"
+    %}
+</div>
+
+Initially, the **interface** of the archive was designed to function similarly to that of a typical image search engine. However, a **compromise** with **copyright laws**[^laws] on the Internet became necessary, leading to its current form.
+
+Upon learning that even using a **thumbnail** of a **copyrighted image** on a web page for documentation purposes—such as what image search engines typically do—could still be considered **copyright infringement**, it was decided not to use any thumbnails derived from the originals.
+
+As a result, all the thumbnails of the images collected in the archive are generated by **scrambling** the order of the **pixels** from their original counterparts.
+
+<div class="figures">
+    {% include image.html
+        size="m"
+        h="1344" w="1088"
+        src="fortune_cookie_site_installation_768_00.jpg"
+        alt="A screenshot of the website Fortune Cookie."
+        color="#6362E1"
+    %}
+</div>
+
+The digital image archive was connected to a physical one in the installation of the same name, set up on occasion of the exhibition ***Can we please play the internet?***.
+
+
+
+
+[^flesh]: The large-scale **collaboration** at the basis of a human image search engine would resemble that of a [human flesh search engine](http://en.wikipedia.org/wiki/Human_flesh_search_engine "Human flesh search engine on Wikipedia"), but with a focus solely on images.
+
+[^process]: The goal is to subvert the **top-down process** typical of standard search engines, transforming it into a **bottom-up** approach.
+
+[^retrieval]: > “**Image retrieval** for abstract concepts is the search for image content that is not directly present in the image, but needs to be **inferred** from **background knowledge and experience**.”
+
+    — Ron Besseling in *Designing an Image Retrieval Interface for Abstract Concepts Within the Domain of Journalism*.
+
+[^laws]: A **jungle** of regulations—so watch out for tigers!

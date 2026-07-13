@@ -1,0 +1,65 @@
+/* Copyright (c) 2017 Andrea Buran [www.andreaburan.com]. All rights reserved */
+
+/*
+** Balloons
+*/
+
+[class*="balloon"] {
+  position: relative;
+
+  margin-top: em($m-small-line);
+  padding-top: em($m-small-line/2);
+  padding-right: em($m-gut*2);
+  padding-bottom: em($m-small-line/2);
+  padding-left: em($m-gut*2);
+
+  border-radius: 0 0.1em 0.1em 0.1em;
+
+  &:after {
+    position: absolute;
+    top: 0;
+    left: em($m-small-size/2);
+
+    width: 0;
+    height: 0;
+    margin-top: em(-$m-small-size);
+    margin-left: em(-$m-small-size/2);
+
+    content: "";
+
+    border-width: em($m-small-size);
+    border-style: solid;
+    border-color: transparent;
+    border-top: 0;
+    border-left: 0;
+  }
+  @include min-screen(col(8)) {
+    margin-top: em($d-small-line);
+    padding-top: em($d-small-line/2);
+    padding-right: em($d-gut);
+    padding-bottom: em($d-small-line/2);
+    padding-left: em($d-gut);
+
+    &:after {
+      left: em($d-small-size/2);
+
+      margin-top: em(-$d-small-size);
+      margin-left: em(-$d-small-size/2);
+
+      border-width: em($d-small-size);
+    }
+  }
+}
+
+/*
+** Colors
+*/
+
+[class*="balloon"] {
+  color: var(--light-type-color);
+  background-color: var(--balloon-background-color);
+
+  &:after {
+    border-bottom-color: var(--balloon-background-color);
+  }
+}

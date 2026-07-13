@@ -1,0 +1,30 @@
+        {%- comment %} whitespace {%- endcomment %}
+        <nav class="column-2d-l">
+          <ul class="controls controls-posts layout-1d-cnt">
+            <li class="controls-item element-1d">
+              <span>Prev</span>
+            </li>
+
+            <li class="controls-item element-1d current">
+              <a href="{{ '/posts/index.html' | prepend: site.baseurl }}">1</a>
+            </li>
+            {%- assign postPages = postList
+              | size
+              | divided_by: 8.0
+              | ceil
+            %}
+            {%- for i in (2..postPages) %}
+            {%- if i == 6 %}
+            {%- break %}
+            {%- else %}
+            <li class="controls-item element-1d">
+              <a href="{{ '/posts/' | append: i | append: '/index.html' | prepend: site.baseurl }}">{{ i }}</a>
+            </li>
+            {%- endif %}
+            {%- endfor %}
+
+            <li class="controls-item element-1d">
+              <a href="{{ '/posts/2/index.html' | prepend: site.baseurl }}">Next {{ site.baseurl }}</a>
+            </li>
+          </ul>
+        </nav>

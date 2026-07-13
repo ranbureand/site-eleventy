@@ -1,0 +1,36 @@
+{
+  "name": "site-eleventy",
+  "version": "1.0.0",
+  "description": "Andrea Buran's site, built with Eleventy.",
+  "type": "module",
+  "scripts": {
+    "clean": "rm -rf _site",
+    "build:css": "sass src/styles/scss/main.scss:src/styles/css/main.css src/colors/styles/scss/main.scss:src/colors/styles/css/main.min.css --style=compressed --no-source-map --quiet-deps",
+    "build": "npm run build:css && eleventy",
+    "start": "npm run build:css && (sass src/styles/scss/main.scss:src/styles/css/main.css src/colors/styles/scss/main.scss:src/colors/styles/css/main.min.css --style=compressed --no-source-map --quiet-deps --watch & eleventy --serve)"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ranbureand/site-eleventy.git"
+  },
+  "keywords": [],
+  "author": "Andrea Buran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ranbureand/site-eleventy/issues"
+  },
+  "homepage": "https://github.com/ranbureand/site-eleventy#readme",
+  "dependencies": {
+    "@11ty/eleventy-plugin-rss": "^2.0.4",
+    "markdown-it": "^14.1.0",
+    "markdown-it-anchor": "^9.2.0",
+    "markdown-it-deflist": "^3.0.0",
+    "markdown-it-footnote": "^4.0.0",
+    "markdown-it-table-of-contents": "^0.9.0",
+    "shiki": "^4.3.1"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6",
+    "sass": "^1.80.0"
+  }
+}

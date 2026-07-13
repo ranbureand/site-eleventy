@@ -1,0 +1,47 @@
+/* Copyright (c) 2017 Andrea Buran [www.andreaburan.com]. All rights reserved */
+
+/*
+** Splash
+*/
+
+.pitch {
+  z-index: 2;
+
+  margin-top: em($m-base-rhythm*4);
+  margin-bottom: em($m-base-rhythm*2);
+
+  grid-row: 1;
+  @include face(serif);
+
+  p {
+    font-weight: $normal;
+
+    @include font-size($m-splash-medium-size, $m-splash-medium-line);
+
+    & + p {
+      margin-top: em($m-splash-medium-line/2, $m-splash-medium-size);
+    }
+  }
+  @include min-screen(col(6)) {
+    p {
+      @include font-size($m-splash-large-size, $m-splash-large-line);
+
+      & + p {
+        margin-top: em($m-splash-large-line/2, $m-splash-large-size);
+      }
+    }
+  }
+  @include min-screen(col(10)) {
+    // Exception: better typography
+    margin-top: em($d-base-rhythm*2);
+    margin-bottom: em($d-base-rhythm*2);
+
+    p {
+      @include font-size($t-splash-large-size, $t-splash-large-line);
+
+      & + p {
+        margin-top: em($t-splash-large-line/2, $t-splash-large-size);
+      }
+    }
+  }
+}

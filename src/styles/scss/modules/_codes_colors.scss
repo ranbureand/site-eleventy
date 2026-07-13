@@ -1,0 +1,63 @@
+/* Copyright (c) 2017 Andrea Buran [www.andreaburan.com]. All rights reserved */
+
+/*
+** Codes => colors
+*/
+
+.highlighter-rouge {
+  pre::-moz-selection,
+  pre ::-moz-selection,
+  code::-moz-selection,
+  code ::-moz-selection {
+    background: var(--code-selected-background-color);
+  }
+
+  pre::selection,
+  pre ::selection,
+  code::selection,
+  code ::selection {
+    background: var(--code-selected-background-color);
+  }
+}
+
+// Prism token classes mapped to the site palette (replaces rouge's Pygments
+// classes; approximates the previous rouge colouring for liquid and yaml).
+
+.highlight {
+  .token.comment,
+  .token.prolog,
+  .token.doctype,
+  .token.cdata { color: var(--code-type-color-lighter); font-style: italic }
+
+  .token.punctuation { color: var(--code-type-color-light) }
+
+  .token.tag,
+  .token.tag .token.punctuation,
+  .token.property,
+  .token.key,
+  .token.atrule { color: var(--code-blue) }
+
+  .token.attr-name,
+  .token.variable,
+  .token.selector,
+  .token.entity,
+  .token.url { color: var(--code-cyan) }
+
+  .token.string,
+  .token.char,
+  .token.attr-value,
+  .token.number,
+  .token.boolean,
+  .token.constant { color: var(--code-magenta) }
+
+  .token.keyword,
+  .token.operator,
+  .token.delimiter,
+  .token.important { color: var(--code-type-color) }
+
+  .token.function,
+  .token.class-name { color: var(--code-red) }
+
+  .token.symbol,
+  .token.regex { color: var(--code-purple) }
+}

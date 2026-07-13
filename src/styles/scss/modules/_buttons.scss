@@ -1,0 +1,214 @@
+/* Copyright (c) 2017 Andrea Buran [www.andreaburan.com]. All rights reserved */
+
+/*
+** Buttons
+*/
+
+[class*="button"] {
+  font-weight: $medium;
+
+  position: relative;
+
+  display: inline-block;
+  overflow: hidden;
+
+  transition-timing-function: ease-out, ease-out;
+  transition-property: color, background-color;
+
+  @include face(sans);
+
+  &:hover {
+    transition-duration: 0.2s, 0.2s;
+    &:before {
+      transform: scale(1.0);
+
+      opacity: 1.0;
+    }
+  }
+
+  &:active {
+    &:before {
+      transition-duration: 0.0s, 0.0s;
+      transform: scale(1.0);
+
+      opacity: 1.0;
+    }
+  }
+
+  &:before {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+
+    display: block;
+
+    width: 100%;
+    padding-bottom: 100%;
+
+    content: "";
+    transition-timing-function: ease-out, ease-out;
+    transition-duration: $duration, $duration;
+    transition-property: opacity, transform;
+    transform: scale(0);
+
+    opacity: 0;
+    border-radius: 50%;
+  }
+
+  div {
+    position: relative;
+    z-index: 10;
+  }
+
+  svg {
+    display: block;
+  }
+}
+
+/*
+** Buttons => sizes
+*/
+
+// Medium button
+
+[class*="button-m"] {
+  border-radius: em($m-small-line);
+
+  &:focus-visible {
+    border-radius: em($m-small-line);
+  }
+  &:before {
+    margin-top: calc(-50% + #{em($m-small-line)});
+  }
+
+  @include min-screen(col(8)) {
+    border-radius: em($d-small-line);
+    &:focus-visible {
+      border-radius: em($d-small-line);
+    }
+    &:before {
+      margin-top: calc(-50% + #{em($d-small-line)});
+    }
+  }
+}
+
+[class*="button-m-text"] {
+  div {
+    padding: em($m-small-line/2, $m-small-size) em($m-gut/2*3, $m-small-size);
+
+    @include font-size($m-small-size, $m-small-line);
+  }
+  svg {
+    display: inline-block;
+
+    width: em($m-small-line, $m-small-size);
+    height: em($m-small-line, $m-small-size);
+
+    &:first-child {
+      float: left;
+      margin-right: em($m-gut/2, $m-small-size);
+    }
+    &:last-child {
+      float: right;
+      margin-left: em($m-gut/2, $m-small-size);
+    }
+  }
+  @include min-screen(col(8)) {
+    div {
+      padding: em($d-small-line/2, $d-small-size) em($d-gut, $d-small-size);
+
+      @include font-size($d-small-size, $d-small-line);
+    }
+    svg {
+      width: em($d-small-line, $d-small-size);
+      height: em($d-small-line, $d-small-size);
+      &:first-child {
+        margin-right: em($d-gut/2, $d-small-size);
+      }
+      &:last-child {
+        margin-left: em($d-gut/2, $d-small-size);
+      }
+    }
+  }
+}
+
+[class*="button-m-icon"] {
+  width: em($m-small-line*2);
+  height: em($m-small-line*2);
+
+  div {
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+
+    align-items: center;
+    justify-content: center;
+  }
+  svg {
+    display: block;
+  }
+  span {
+    display: none;
+  }
+  @include min-screen(col(8)) {
+    width: em($d-small-line*2);
+    height: em($d-small-line*2);
+  }
+}
+
+.button-m-icon-s {
+  svg {
+    transform: scale(0.9);
+  }
+}
+
+.button-m-icon-m {
+  svg {
+    transform: scale(1);
+  }
+}
+
+.button-m-icon-l {
+  svg {
+    transform: scale(1.1);
+  }
+}
+
+.button-m-icon-xl {
+  svg {
+    transform: scale(1.2);
+  }
+}
+
+/*
+** Colors
+*/
+
+[class*="button"] {
+  color: var(--button-type-color);
+  background-color: var(--button-background-color);
+
+  svg {
+    fill: var(--button-type-color);
+    path {
+      fill: var(--button-type-color);
+    }
+  }
+
+  &:before {
+    background-color: var(--button-background-color-hovered);
+  }
+
+  &:hover {
+    color: var(--button-type-color);
+  }
+
+  &:active {
+    color: var(--button-type-color);
+    &:before {
+      background-color: var(--button-background-color-activated);
+    }
+  }
+}

@@ -1,0 +1,18 @@
+/* Copyright (c) 2017 Andrea Buran [www.andreaburan.com]. All rights reserved */
+
+/*
+** Separators
+*/
+
+.separator {
+  border-top-width: $border-width;
+  border-top-style: solid;
+}
+
+/*
+** Colors
+*/
+
+.separator {
+  border-top-color: var(--border-color);
+}

@@ -1,0 +1,338 @@
+/* Copyright (c) 2017 Andrea Buran [www.andreaburan.com]. All rights reserved */
+
+::placeholder {
+  opacity: 1.0;
+}
+
+/*
+** Basics
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit; // normalize.css
+
+  margin: 0; // normalize.css
+
+  color: inherit; // normalize.css
+  &:focus {
+    outline: none;
+  }
+}
+
+button,
+input {
+  overflow: visible; // normalize.css
+}
+
+button,
+select {
+  text-transform: none; // normalize.css
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer; // normalize.css
+
+  -webkit-appearance: button; // normalize.css
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default; // normalize.css
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0; // normalize.css
+
+  border: 0; // normalize.css
+}
+
+input {
+  line-height: normal; // normalize.css
+}
+
+[type="checkbox"],
+[type="radio"] {
+  padding: 0; // normalize.css
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; // normalize.css
+}
+
+[type="search"] {
+  outline-offset: -2px; // normalize.css
+
+  -webkit-appearance: textfield; // normalize.css
+}
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; // normalize.css
+}
+
+::-webkit-file-upload-button {
+  font: inherit; // normalize.css
+
+  -webkit-appearance: button; // normalize.css
+}
+
+fieldset {
+  margin: 0; // normalize.css
+  padding: 0; // normalize.css
+
+  border: 0; // normalize.css
+}
+
+form {
+  margin: 0;
+}
+
+legend {
+  padding: 0; // normalize.css
+
+  border: 0; // normalize.css
+}
+
+textarea {
+  overflow: auto; // normalize.css
+
+  resize: vertical;
+}
+
+optgroup {
+  font-weight: $medium; // normalize.css
+}
+
+/*
+** Istances
+*/
+
+.form {
+  clear: both;
+
+  label {
+    font-weight: $normal;
+
+    display: block;
+
+    margin-bottom: em($m-medium-line/4, $m-medium-size);
+
+    @include font-size($m-medium-size, $m-medium-line);
+  }
+
+  input[type = "text"],
+  textarea,
+  input[type = "submit"] {
+    display: block;
+
+    @include face(sans);
+  }
+
+  input[type = "text"],
+  textarea {
+    width: 100%;
+    padding-top: em($m-medium-line/4 + strip(-$field-border-width/10), $m-medium-size);
+    padding-right: em($m-gut/2, $m-medium-size);
+    padding-bottom: em($m-medium-line/4 + strip(-$field-border-width/10), $m-medium-size);
+    padding-left: em($m-gut/2, $m-medium-size);
+
+    border-width: $field-border-width;
+    border-style: solid;
+
+    @include font-size($m-medium-size, $m-medium-line);
+
+    &:focus,
+    &:hover {
+      transition-timing-function: ease-in-out, ease-in-out;
+      transition-duration: 0.2s, 0.2s;
+      transition-property: color, border-color;
+    }
+  }
+
+  input[type = "text"] {
+    height: em($m-medium-line*1.5, $m-medium-size);
+  }
+
+  i {
+    font-style: normal;
+
+    display: block;
+
+    margin-top: em($m-small-line/4, $m-small-size);
+
+    @include font-size($m-small-size, $m-small-line);
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  input[type = "submit"] {
+    font-weight: $normal;
+
+    display: inline-block;
+
+    height: em($m-medium-line*1.5, $m-medium-size);
+    padding-top: em($m-medium-line/4 + strip(-$button-border-width/10), $m-medium-size);
+    padding-right: em($m-gut*3, $m-medium-size);
+    padding-bottom: em($m-medium-line/4 + strip(-$button-border-width/10), $m-medium-size);
+    padding-left: em($m-gut*3, $m-medium-size);
+
+    border-width: $button-border-width;
+    border-style: solid;
+    border-radius: em($m-medium-line*1.5, $m-medium-size);
+
+    @include font-size($m-medium-size, $m-medium-line);
+
+    &:hover {
+      transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
+      transition-duration: 0.2s, 0.2s, 0.2s;
+      transition-property: color, background-color, border-color;
+    }
+
+    &:active {
+      transition-duration: 0s, 0s;
+    }
+  }
+
+  .field,
+  .field-button {
+    margin-bottom: em($m-medium-line);
+  }
+
+  .field-button {
+    width: 100%;
+
+    text-align: center;
+  }
+
+  @include min-screen(col(8)) {
+    label {
+      margin-bottom: em($d-medium-line/4, $d-medium-size);
+
+      @include font-size($d-medium-size, $d-medium-line);
+    }
+
+    input[type = "text"],
+    textarea {
+      padding-top: em($d-medium-line/4 + strip(-$field-border-width/10), $d-medium-size);
+      padding-right: em($d-gut/2, $d-medium-size);
+      padding-bottom: em($d-medium-line/4 + strip(-$field-border-width/10), $d-medium-size);
+      padding-left: em($d-gut/2, $d-medium-size);
+
+      @include font-size($d-medium-size, $d-medium-line);
+    }
+
+    input[type = "text"] {
+      height: em($d-medium-line*1.5, $d-medium-size);
+    }
+
+    i {
+      margin-top: em($d-small-line/4, $d-small-size);
+
+      @include font-size($d-small-size, $d-small-line);
+    }
+
+    input[type = "submit"] {
+      height: em($d-medium-line*1.5, $d-medium-size);
+      padding-top: em($d-medium-line/4 + strip(-$button-border-width/10), $d-medium-size);
+      padding-right: em($d-gut*3, $d-medium-size);
+      padding-bottom: em($d-medium-line/4 + strip(-$button-border-width/10), $d-medium-size);
+      padding-left: em($d-gut*3, $d-medium-size);
+
+      border-radius: em($d-medium-line*1.5, $d-medium-size);
+
+      @include font-size($d-medium-size, $d-medium-line);
+    }
+
+    .field,
+    .field-button {
+      margin-bottom: em($d-medium-line);
+    }
+  }
+  @include min-screen(col(12)) {
+    label {
+      float: left;
+      clear: left;
+
+      width: col(4, $d-medium-size);
+      margin-top: em($d-medium-line/4, $d-medium-size);
+      margin-left: em(-$column-width*4 -$d-gut, $d-medium-size);
+
+      text-align: right;
+    }
+
+    .field-button {
+      text-align: left;
+    }
+  }
+}
+
+/*
+** Colors
+*/
+
+::placeholder {
+  color: var(--placeholder-type-color);
+}
+
+.form {
+  input[type = "text"],
+  textarea {
+    color: var(--type-color);
+    border-color: var(--field-border-color);
+    background-color: var(--field-background-color);
+
+    &:hover,
+    &:focus,
+    &:focus:hover {
+      color: var(--strong-type-color);
+      border-color: var(--strong-field-border-color);
+    }
+  }
+
+  input[type = "submit"] {
+    color: var(--button-type-color);
+    background-color: var(--button-background-color);
+    border-color: var(--button-background-color);
+
+    &:hover {
+      border-color: var(--color-1);
+      background-color: var(--color-1);
+    }
+    &:active {
+      border-color: var(--color-1-darker);
+      background-color: var(--color-1-darker);
+    }
+  }
+
+  .error {
+    input[type = "text"],
+    textarea {
+      border-color: var(--color-1);
+    }
+  }
+}

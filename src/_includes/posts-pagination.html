@@ -1,0 +1,33 @@
+        {%- assign totalPages = pagination.hrefs | size %}
+        {%- if totalPages > 1 %}
+        <nav class="column-2d-l">
+          <ul class="controls controls-posts layout-1d-cnt">
+            <li class="controls-item element-1d">
+              {%- if pagination.href.previous %}
+              <a href="{{ pagination.href.previous | prepend: site.baseurl | append: 'index.html' }}">Prev</a>
+              {%- else %}
+              <span>Prev</span>
+              {%- endif %}
+            </li>
+
+            {%- assign startIdx = pagination.pageNumber | minus: 2 %}
+            {%- if startIdx < 0 %}{% assign startIdx = 0 %}{% endif %}
+            {%- assign lastIdx = totalPages | minus: 1 %}
+            {%- assign endIdx = pagination.pageNumber | plus: 2 %}
+            {%- if endIdx > lastIdx %}{% assign endIdx = lastIdx %}{% endif %}
+            {%- for i in (startIdx..endIdx) %}
+            <li class="controls-item element-1d{% if i == pagination.pageNumber %} current{% endif %}">
+              <a href="{{ pagination.hrefs[i] | prepend: site.baseurl | append: 'index.html' }}">{{ i | plus: 1 }}</a>
+            </li>
+            {%- endfor %}
+
+            <li class="controls-item element-1d">
+              {%- if pagination.href.next %}
+              <a href="{{ pagination.href.next | prepend: site.baseurl | append: 'index.html' }}">Next</a>
+              {%- else %}
+              <span>Next</span>
+              {%- endif %}
+            </li>
+          </ul>
+        </nav>
+        {%- endif %}

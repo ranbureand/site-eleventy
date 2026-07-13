@@ -1,0 +1,202 @@
+/* Copyright (c) 2017 Andrea Buran [www.andreaburan.com]. All rights reserved */
+
+/*
+** Typography
+*/
+
+.mono {
+  @include face(mono);
+}
+.sans {
+  @include face(sans);
+}
+.serif {
+  @include face(serif);
+}
+.regular {
+  font-style: normal;
+}
+.italic {
+  font-style: italic;
+}
+
+[class*="typo"] {
+  position: relative;
+
+  // Inline elements
+
+  p,
+  li,
+  dd {
+    a {
+      text-decoration: underline;
+      text-decoration-thickness: from-font;
+    }
+    code {
+      white-space: normal;
+      word-break: break-word;
+      //word-break: break-all;
+    }
+  }
+
+  a.footnote {
+    text-decoration: none;
+  }
+
+  // Block elements
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @include face(sans);
+    a {
+      &:before,
+      &:after {
+        transition-timing-function: ease-out;
+        transition-duration: $duration;
+        transition-property: opacity;
+
+        opacity: 0;
+      }
+      &:after {
+        content: " #";
+      }
+    }
+
+    a:hover {
+      &:before,
+      &:after {
+        opacity: 1.0;
+      }
+    }
+  }
+
+  h1,
+  h2,
+  h4,
+  h6 {
+    font-weight: $medium;
+  }
+
+  h3,
+  h5 {
+    font-weight: $normal;
+  }
+
+  ul {
+    li {
+      &:before {
+        content: "\2022";
+      }
+    }
+  }
+
+  ol {
+    counter-reset: ordered-list;
+
+    li {
+      counter-increment: ordered-list;
+
+      &:before {
+        //content: counter(ordered-list)'.';
+        content: counter(ordered-list);
+      }
+    }
+  }
+
+  ul ul,
+  ol ol {
+    margin-bottom: 0;
+    padding-left: em($m-gut);
+  }
+
+  li:before,
+  dt {
+    float: left;
+  }
+
+  dt:after {
+    font-style: normal;
+
+    content: " : ";
+  }
+
+  // Group elements
+
+  blockquote {
+    padding-left: em($m-gut*2-$border-width);
+
+    border-left-width: $border-width;
+    border-left-style: solid;
+  }
+
+  hr {
+    border-top-width: $border-width;
+  }
+
+  .toc {
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      top: 0;
+      border-left-width: $border-width;
+      border-left-style: solid;
+    }
+    li {
+      &:before {
+        content: none;
+      }
+    }
+  }
+
+  > *:first-child {
+    margin-top: 0;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+
+  @include min-screen(col(8)) {
+    // Grouping content
+
+    blockquote {
+      padding-left: em($d-gut/2*3-$border-width);
+    }
+  }
+  @include min-screen(col(12)) {
+    // Text-level semantics
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      a {
+        &:before {
+          content: "# ";
+          position: absolute;
+          left: -1em;
+        }
+        &:after {
+          content: "";
+        }
+      }
+    }
+
+    li:before,
+    dt {
+      text-align: right;
+    }
+
+    dt:after {
+      content: none;
+    }
+  }
+}

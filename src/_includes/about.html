@@ -1,0 +1,58 @@
+{%- if include.ground %}
+  {%- assign ground = include.ground %}
+{%- else %}
+  {%- assign ground = 'background' %}
+{%- endif %}
+    <div class="canvas-about {{ ground }}">
+      <div class="about layout-2d">
+        <div class="separator"></div>
+
+        <div class="column-2d-s-1-about typo-s serif">
+          <p>Previously designing products at <strong>Skippet</strong> and <strong>Kolay IK</strong>, remotely.</p>
+        </div>
+
+        <div class="column-2d-s-2-about typo-s serif">
+          <p>If you would like to chat, feel free to reach out at <span class="envelope"><noscript>turn on Javascript to see my e-mail address</noscript></span>.</p>
+        </div>
+
+        <div class="column-2d-s-3-about typo-s serif">
+          
+          <div class="links layout-1d-ltr">
+            <a class="link button-m-icon-s" href="https://www.linkedin.com/in/andreaburan" target="_blank" title="View Andrea Buran’s LinkedIn">
+              <div>
+                {% include icon-linkedin.html %}
+                <span>LinkedIn</span>
+              </div>
+            </a>
+            <a class="link button-m-icon-xl" href="https://wellfound.com/u/ranbureand" target="_blank" title="View Andrea Buran’s Wellfound">
+              <div>
+                {% include icon-wellfound.html %}
+                <span>Wellfound</span>
+              </div>
+            </a>
+            <a class="link button-m-icon-m" href="https://github.com/ranbureand" target="_blank" title="View Andrea Buran’s GitHub">
+              <div>
+                {% include icon-github.html %}
+                <span>GitHub</span>
+              </div>
+            </a>
+            <a class="link button-m-icon-s" href="https://vimeo.com/andreaburan" target="_blank" title="View Andrea Buran’s Vimeo">
+              <div>
+                {% include icon-vimeo.html %}
+                <span>Vimeo</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="column-2d-s-4-about typo-s serif">
+          <a class="button-m-text" href="{{ site.baseurl }}/media/documents/andrea_buran_curriculum_vitae_00.pdf" target="_blank" title="Download Andrea Buran’s curriculum vitae">
+            <div>
+              <span>Download Curriculum Vitae</span>
+              {% include icon-download.html %}
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>

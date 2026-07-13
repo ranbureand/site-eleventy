@@ -1,0 +1,37 @@
+/* Copyright (c) 2017 Andrea Buran [www.andreaburan.com]. All rights reserved */
+
+/*
+** Formations
+*/
+
+.base-stalagmite {
+  position: relative;
+}
+
+.stalactite,
+.stalagmite {
+  position: absolute;
+  right: 0;
+  left: 0;
+
+  width: 100vw;
+}
+
+.stalactite {
+  bottom: -8px;
+}
+
+.stalagmite {
+  top: 0;
+}
+
+/*
+** Colors
+*/
+
+.stalactite,
+.stalagmite {
+  path {
+    fill: var(--background-color);
+  }
+}

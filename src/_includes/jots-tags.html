@@ -1,0 +1,13 @@
+        <nav class="column-2d-l">
+          <ul class="tags layout-1d">
+            {%- for jot in collections.jotTagIndex %}
+              <li class="tag element-1d">
+                {%- if jot.page == 1 %}
+                <a href="{{ site.baseurl }}/jots/index.html#jot-{{ jot.number }}" title="Jot № {{ jot.number }}">{% for tag in jot.tags %}{% if forloop.last == true %}{{ tag }}{% else %}{{ tag }} <span>·</span> {% endif %}{% endfor %}</a>
+                {%- else %}
+                <a href="{{ site.baseurl }}/jots/{{ jot.page }}/index.html#jot-{{ jot.number }}" title="Jot № {{ jot.number }}">{% for tag in jot.tags %}{% if forloop.last == true %}{{ tag }}{% else %}{{ tag }} <span>·</span> {% endif %}{% endfor %}</a>
+                {%- endif %}
+              </li>
+            {%- endfor %}
+          </div>
+        </nav>

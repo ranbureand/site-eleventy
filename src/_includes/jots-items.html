@@ -1,0 +1,8 @@
+        {%- comment %} whitespace {%- endcomment %}
+        <div class="column-2d-l">
+          <ul class="jots-items layout-1d-ltr">
+            {% for jot in pagination.items %}
+            {% include jots-item.html jot=jot %}
+            {%- endfor %}
+          </ul>
+        </div>

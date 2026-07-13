@@ -1,0 +1,9 @@
+        {%- comment %} whitespace {%- endcomment %}
+        <aside class="appendix typo-s">
+          <dl>
+            {% if tags %}<dt>tags</dt><dd>{% for tag in tags %}{% if forloop.last == true %}{{ tag }}{% else %}{{ tag }}, {% endif %}{% endfor %}</dd>{% endif %}
+            {% if roles %}<dt>role</dt><dd>{% for roles in roles %}{% if forloop.last == true %}{{ roles }}{% else %}{{ roles }}, {% endif %}{% endfor %}</dd>{% endif %}
+            {% if responsibilities %}<dt>responsibilities</dt><dd>{% for responsibilities in responsibilities %}{% if forloop.last == true %}{{ responsibilities }}{% else %}{{ responsibilities }}, {% endif %}{% endfor %}</dd>{% endif %}
+            {% if links %}<dt>links</dt><dd>{{ links | markdownify }}</dd>{% endif %}
+          </dl>
+        </aside>

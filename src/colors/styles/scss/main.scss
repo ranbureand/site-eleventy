@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.l-playground,
+.d-playground {
+  padding: 128px;
+  div {
+    svg {
+      display: block;
+      margin-bottom: 128px;
+    }
+    &:last-child {
+      svg {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

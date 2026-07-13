@@ -1,0 +1,172 @@
+/* Copyright (c) 2017 Andrea Buran [www.andreaburan.com]. All rights reserved */
+
+/*
+** Typography => Small
+*/
+
+.typo-s,
+.footnotes > ol > li {
+
+  // Block elements
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin-bottom: em($m-medium-line/4, $m-medium-size);
+
+    @include font-size($m-medium-size, $m-medium-line);
+  }
+
+  h5,
+  h6,
+  p,
+  dd {
+    margin-bottom: em($m-small-line/4, $m-small-size);
+
+    @include font-size($m-small-size, $m-small-line);
+  }
+
+  ul,
+  ol {
+    margin-bottom: em($m-small-line/2);
+  }
+
+  ul,
+  ol {
+    padding-left: em($m-gut*2, $m-small-size);
+  }
+
+  li,
+  dt {
+    @include font-size($m-small-size, $m-small-line);
+  }
+
+  dt {
+    padding-right: em($m-gut/2, $m-small-size);
+  }
+
+  li:before {
+    width: em($m-gut*2, $m-small-size);
+    margin-left: em(-$m-gut*2, $m-small-size);
+  }
+
+  ul ul,
+  ol ol {
+    padding-left: em($m-gut*2, $m-small-size);
+  }
+
+  li li {
+    font-size: 1em;
+  }
+
+  // Grouping content
+
+  blockquote {
+    margin-bottom: em($m-small-line/2);
+  }
+
+  pre {
+    margin-top: em($m-small-line/2, $m-small-size);
+    margin-bottom: em($m-small-line/2, $m-small-size);
+    padding-top: em($m-small-line/2, $m-small-size);
+    padding-right: em($m-gut*2, $m-small-size);
+    padding-bottom: em($m-small-line/2, $m-small-size);
+    padding-left: em($m-gut*2, $m-small-size);
+
+    @include font-size($m-small-size, $m-small-line);
+  }
+
+  .separator {
+    width: calc(25% - #{em($m-gut/2)});
+    margin-bottom: em($m-small-line);
+  }
+
+  @include min-screen(col(8)) {
+    .separator {
+      width: calc(50% - #{em($m-gut/2)});
+    }
+  }
+
+  @include min-screen(col(8)) {
+    // Text-level semantics
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      margin-bottom: em($d-medium-line/4, $d-medium-size);
+
+      @include font-size($d-medium-size, $d-medium-line);
+    }
+
+    h5,
+    h6,
+    p,
+    dd {
+      margin-bottom: em($d-small-line/4, $d-small-size);
+
+      @include font-size($d-small-size, $d-small-line);
+    }
+
+    ul,
+    ol {
+      margin-bottom: em($d-small-line/2);
+    }
+
+    ul,
+    ol {
+      padding-left: em($d-gut/2*3);
+    }
+
+    li,
+    dt {
+      @include font-size($d-small-size, $d-small-line);
+    }
+
+    li:before {
+      width: em($d-gut/2*3, $d-small-size);
+      margin-left: em(-$d-gut/2*3, $d-small-size);
+    }
+
+    dt {
+      padding-right: em($d-gut/2, $d-small-size);
+    }
+
+    ul ul,
+    ol ol {
+      padding-left: em($d-gut, $d-small-size);
+    }
+
+    li li {
+      font-size: 1em;
+    }
+
+    // Block group elements
+
+    blockquote {
+      margin-bottom: em($d-small-line/2);
+    }
+
+    pre {
+      margin-top: em($d-small-line/2, $d-small-size);
+      margin-bottom: em($d-small-line/2, $d-small-size);
+      padding-top: em($d-small-line/2, $d-small-size);
+      padding-right: em($d-gut, $d-small-size);
+      padding-bottom: em($d-small-line/2, $d-small-size);
+      padding-left: em($d-gut, $d-small-size);
+
+      @include font-size($d-small-size, $d-small-line);
+    }
+
+    .separator {
+      width: calc(50% - #{em($d-gut/2)});
+      margin-bottom: em($d-small-line);
+    }
+  }
+  @include min-screen(col(16)) {
+    .separator {
+      width: 100%;
+    }
+  }
+}

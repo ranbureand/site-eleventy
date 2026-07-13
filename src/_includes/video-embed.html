@@ -1,0 +1,55 @@
+{%- capture __html -%}
+{%- if include.size == "xl" %}
+  {%- assign video_size = 'video-embed-xl' %}
+{%- elsif include.size == "l" %}
+  {%- assign video_size = 'video-embed-l' %}
+{%- elsif include.size == "sm" %}
+  {%- assign video_size = 'video-embed-sm' %}
+{%- elsif include.size == "s" %}
+  {%- assign video_size = 'video-embed-s' %}
+{%- elsif include.size == "xs" %}
+  {%- assign video_size = 'video-embed-xs' %}
+{%- else %}
+  {%- assign video_size = 'video-embed-m' %}
+{%- endif %}
+
+{%- assign column = 72 %}
+{%- assign w_float = include.w | times: 1.0 %}
+
+{%- if include.path %}
+  {%- assign video_path = include.path %}
+{%- elsif layout == 'project' %}
+  {%- assign video_project_name = page.fileSlug %}
+  {%- assign video_path = 'projects-optimized/' | append: video_project_name %}
+{%- elsif layout == 'post' %}
+  {%- assign video_post_name = page.fileSlug %}
+  {%- assign video_path = 'posts-optimized/' | append: video_post_name %}
+{%- endif %}
+
+<figure class="{{ video_size }}" id="{{ include.src }}">
+  {%- if include.h and include.w%}
+  <div class="ratio"
+    style="padding-bottom: {{ include.h | divided_by: w_float | times: 100 }}%;{% if include.color %}background-color: {{ include.color }};{% endif %}" target="blank"
+    >
+  {%- else %}
+  <div>
+  {%- endif %}
+    <video
+      class="video-content"
+      controls="controls"
+      loop="loop"
+      {% if include.audio == "true" %} muted="true" {% endif %}
+      poster="../media/{{ video_path }}/videos/{{ include.src }}.jpg">
+      <source src="../media/{{ video_path }}/videos/{{ include.src }}.webm" type="video/webm"/>
+      <source src="../media/{{ video_path }}/videos/{{ include.src }}.mp4" type="video/mp4"/>
+      <source src="../media/{{ video_path }}/videos/{{ include.src }}.ogv" type="video/ogv"/>
+      Your browser cannot play this video because it does not support the HTML5 video tag. Please <a href="../media/{{ video_path }}/videos/{{ include.src }}.mp4" target="_blank">download the video</a> to watch it instead.
+    </video>
+  </div>
+  {%- if include.caption %}
+  <figcaption class="typo-s">
+    {{ include.caption | markdownify }}
+  </figcaption>
+  {%- endif %}
+</figure>{%- endcapture -%}
+{{ __html | no_blank_lines }}

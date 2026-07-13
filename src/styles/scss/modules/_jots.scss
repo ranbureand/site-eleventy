@@ -1,0 +1,152 @@
+/* Copyright (c) 2017 Andrea Buran [www.andreaburan.com]. All rights reserved */
+
+/*
+** Jots
+*/
+
+.jots-items {
+  padding-top: em($m-base-rhythm);
+
+  > li {
+    width: 100/1*1%;
+    margin-bottom: em($m-base-rhythm*2);
+    padding-right: em($m-gut);
+    padding-left: em($m-gut/2*5);
+
+    opacity: 1;
+
+    @include animation(element-in);
+  }
+  @include min-screen(col(8)) {
+    padding-top: em($d-base-rhythm);
+
+    > li {
+      width: 100/2*1%;
+      margin-bottom: em($d-base-rhythm*2);
+      padding-right: em($d-gut/2);
+      padding-left: em($d-gut/2*3);
+    }
+    > li:nth-child(-n + 2) {
+      width: 100/1*1%;
+      padding-right: em($d-gut/2);
+      padding-left: em($d-gut*2);
+    }
+  }
+  @include min-screen(col(12)) {
+    > li {
+      width: 100/3*1%;
+    }
+    > li:nth-child(-n + 2) {
+      width: 100/2*1%;
+    }
+  }
+  @include min-screen(col(16)) {
+    > li {
+      width: 100/4*1%;
+    }
+  }
+}
+
+@for $i from 0 through 48 {
+  .jots-items > li:nth-child(#{$i + 1}n) {
+    animation-delay: #{$i * $duration/16 };
+  }
+}
+
+.jots-item {
+  position: relative;
+
+  display: block;
+
+  scroll-margin-top: em($m-scroll-offset);
+  @include min-screen(col(8)) {
+    scroll-margin-top: em($d-scroll-offset);
+  }
+}
+
+.jots-item-body {
+  font-style: normal;
+
+  margin-left: em(-$m-gut*2);
+  padding-left: em($m-gut*2 - $border-width);
+
+  border-left-width: $border-width;
+  border-left-style: solid;
+
+  em {
+    font-style: italic;
+  }
+  cite {
+    font-style: italic;
+    em {
+      font-style: normal;
+    }
+  }
+  @include min-screen(col(8)) {
+    margin-left: em(-$d-gut);
+    padding-left: em($d-gut - $border-width);
+  }
+}
+
+.jots-item:nth-child(-n + 2) {
+  @include min-screen(col(8)) {
+    .jots-item-body {
+      margin-left: em(-$d-gut/2*3);
+      padding-left: em($d-gut/2*3 - $border-width);
+    }
+  }
+}
+
+.jots-item-reference {
+  margin-top: em($m-small-line, $m-small-size);
+
+  @include font-size($m-small-size, $m-small-line);
+  a {
+    text-decoration: underline;
+    text-decoration-thickness: from-font;
+  }
+  @include min-screen(col(8)) {
+    margin-top: em($d-small-line, $d-small-size);
+
+    @include font-size($d-small-size, $d-small-line);
+  }
+}
+
+.jots-item-date {
+  margin-top: em($m-small-line/4, $m-small-size);
+
+  @include font-size($m-small-size, $m-small-line);
+  a {
+    &:before {
+      content: "#";
+    }
+  }
+  @include min-screen(col(8)) {
+    margin-top: em($d-small-line/4, $d-small-size);
+
+    @include font-size($d-small-size, $d-small-line);
+  }
+}
+
+/*
+** Colors
+*/
+
+.jots-item-date {
+  a {
+    &:before {
+      color: var(--strong-type-color);
+    }
+  }
+}
+
+.jots-item:target {
+  .jots-item-body {
+    border-left-color: var(--color-1);
+  }
+  .jots-item-date {
+    a {
+      color: var(--color-1);
+    }
+  }
+}

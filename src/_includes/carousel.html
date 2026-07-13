@@ -1,0 +1,37 @@
+    <div class="canvas-carousel {{ ground }}">
+      <div class="carousel layout-2d">
+        <div class="column-2d-l">
+          <div class="slides" style="background-color:#E36351;">
+            {%- for slide in slides %}
+            <img 
+              {%- if forloop.first %}
+              class="slide current"
+              loading="eager"
+              {%- else %}
+              class="slide"
+              loading="lazy"
+              {%- endif %}
+              src="
+              {{ site.baseurl }}/media/slides-optimized/1440/{{ slide.src }}
+              "
+              srcset="
+              {{ site.baseurl }}/media/slides-optimized/2880/{{ slide.src }} 2880w,
+              {{ site.baseurl }}/media/slides-optimized/2160/{{ slide.src }} 2160w,
+              {{ site.baseurl }}/media/slides-optimized/1440/{{ slide.src }} 1440w,
+              {{ site.baseurl }}/media/slides-optimized/1080/{{ slide.src }} 1080w,
+              {{ site.baseurl }}/media/slides-optimized/720/{{ slide.src }} 720w,
+              {{ site.baseurl }}/media/slides-optimized/360/{{ slide.src }} 360w
+              "
+              sizes="
+              (min-width: 72em) {{ column | times: 16 | divided_by: 16 | floor }}em,
+              (min-width: 54em) {{ column | times: 12 | divided_by: 16 | floor }}em,
+              (min-width: 30em) {{ column | times: 8 | divided_by: 16 | floor }}em,
+              {{ 360 | divided_by: 16 | floor }}em
+              "
+              alt="{{ slide.alt | strip_html  }}"
+            >
+            {%- endfor %}
+          </div>
+        </div>
+      </div>
+    </div>

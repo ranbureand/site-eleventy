@@ -1,0 +1,20 @@
+---
+layout: base
+mode: dark
+---
+
+    <main class="canvas-posts background base-stalagmite">
+      <section class="posts layout-2d">
+
+        <header class="posts-head column-2d-l typo-sl serif">
+          <h2><span class="color-1 sans">{{ title }}</span></h2>
+          <p>As an <em>occasional</em> writer, I&nbsp;write to clear my&nbsp;mind, shape my&nbsp;thoughts, and share them with the world.</p>
+        </header>
+
+        <div class="column-2d-l separator"></div>
+
+        {% include posts-items.html %}
+        {% include posts-pagination.html %}
+
+      </section>
+    </main>

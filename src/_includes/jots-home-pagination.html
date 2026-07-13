@@ -1,0 +1,26 @@
+        {%- comment %} whitespace {%- endcomment %}
+        <nav class="column-2d-l">
+          <ul class="controls controls-posts layout-1d-cnt">
+            <li class="controls-item element-1d">
+              <span>Prev</span>
+            </li>
+
+            <li class="controls-item element-1d current">
+              <a href="{{ '/jots/index.html' | prepend: site.baseurl }}">1</a>
+            </li>
+            {%- assign jotPages = jotList | size | divided_by: 24.0 | ceil %}
+            {%- for i in (2..jotPages) %}
+            {%- if i == 6 %}
+            {%- break %}
+            {%- else %}
+            <li class="controls-item element-1d">
+              <a href="{{ '/jots/' | append: i | append: '/index.html' | prepend: site.baseurl }}">{{ i }}</a>
+            </li>
+            {%- endif %}
+            {%- endfor %}
+
+            <li class="controls-item element-1d">
+              <a href="{{ '/jots/2/index.html' | prepend: site.baseurl }}">Next {{ site.baseurl }}</a>
+            </li>
+          </ul>
+        </nav>

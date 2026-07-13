@@ -1,0 +1,124 @@
+/* Copyright (c) 2017 Andrea Buran [www.andreaburan.com]. All rights reserved */
+
+/*
+** Jot splash
+*/
+
+.jot {
+  z-index: 2;
+
+  margin-top: em($m-base-rhythm*4);
+  margin-bottom: em($m-base-rhythm*2);
+
+  grid-row: 1;
+  scroll-margin-top: em($m-scroll-offset);
+  @include min-screen(col(8)) {
+    margin-top: em($d-base-rhythm*2);
+    margin-bottom: em($d-base-rhythm*1);
+
+    scroll-margin-top: em($d-scroll-offset);
+  }
+}
+
+.jot-body {
+  font-style: normal;
+
+  margin-left: -$border-width/2;
+  padding-left: em($m-gut*2 - $border-width);
+
+  border-left-width: $border-width;
+  border-left-style: solid;
+
+  em {
+    font-style: italic;
+  }
+  cite {
+    font-style: italic;
+    em {
+      font-style: normal;
+    }
+  }
+  p {
+    font-weight: $normal;
+
+    @include font-size($m-splash-medium-size, $m-splash-medium-line);
+
+    & + p {
+      margin-top: em($m-splash-medium-line/2, $m-splash-medium-size);
+    }
+  }
+  @include min-screen(col(6)) {
+    p {
+      @include font-size($m-splash-large-size, $m-splash-large-line);
+
+      & + p {
+        margin-top: em($m-splash-large-line/2, $m-splash-large-size);
+      }
+    }
+  }
+  @include min-screen(col(10)) {
+    margin-left: -$border-width/2;
+    // Exception: better typography
+    padding-left: em($d-gut*2 - $border-width);
+    p {
+      @include font-size($d-extra-extra-large-size, $d-extra-extra-large-line);
+
+      & + p {
+        margin-top: em($t-splash-large-line/2, $t-splash-large-size);
+      }
+    }
+  }
+}
+
+.jot-reference {
+  margin-top: em($m-small-line*2, $m-small-size);
+
+  @include font-size($m-small-size, $m-small-line);
+  a {
+    text-decoration: underline;
+  }
+  @include min-screen(col(8)) {
+    margin-top: em($d-small-line*2, $d-small-size);
+
+    @include font-size($d-small-size, $d-small-line);
+  }
+}
+
+.jot-date {
+  margin-top: em($m-small-line/4, $m-small-size);
+
+  @include font-size($m-small-size, $m-small-line);
+  a {
+    &:before {
+      content: "#";
+    }
+  }
+  @include min-screen(col(8)) {
+    margin-top: em($d-small-line/4, $d-small-size);
+
+    @include font-size($d-small-size, $d-small-line);
+  }
+}
+
+/*
+** Colors
+*/
+
+.jot-date {
+  a {
+    &:before {
+      color: var(--strong-type-color);
+    }
+  }
+}
+
+.jot:target {
+  .jot-body {
+    border-left-color: var(--color-1);
+  }
+  .jot-date {
+    a {
+      color: var(--color-1);
+    }
+  }
+}

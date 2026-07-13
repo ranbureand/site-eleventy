@@ -1,0 +1,29 @@
+---
+layout: base
+mode: dark
+---
+
+    <main class="canvas-jots foreground">
+      <section class="jots layout-2d">
+
+        <header class="jots-head column-2d-l typo-sl serif">
+          <h2><span class="color-1 sans">{{ title }}</span></h2>
+          <p>As an <em>avid</em> reader, I&nbsp;jot down bits from food for thought pieces on design and development to&nbsp;revisit and reflect on later.</p>
+        </header>
+
+        <div class="column-2d-l separator"></div>
+
+        {% include jots-items.html %}
+        {% include jots-pagination.html %}
+
+      </section>
+    </main>
+
+    <div class="canvas-jots-tags background base-stalagmite">
+      <section class="jots-tags layout-2d">
+
+{% include jots-tags.html %}
+
+      </section>
+    </div>
+

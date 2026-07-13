@@ -1,0 +1,153 @@
+/* Copyright (c) 2017 Andrea Buran [www.andreaburan.com]. All rights reserved */
+
+/*
+** Colors, dark mode
+*/
+
+body.dark {
+  color-scheme: dark;
+
+  // Colors
+  --color-1:                    #{$d-color-1};
+  --color-1-darker:             #{$d-color-1-darker};
+
+  --color-2:                    #{$d-color-2};
+  --color-2-darker:             #{$d-color-2-darker};
+
+  // Typography
+  --strong-type-color:          #{$d-strong-type-color};
+  --type-color:                 #{$d-type-color};
+  --light-type-color:           #{$d-light-type-color};
+
+  --selected-type-color:        #{$d-selected-type-color};
+
+  --placeholder-type-color:     #{$d-placeholder-type-color};
+
+  --button-type-color:          #{$d-button-type-color};
+
+  // Backgrounds
+  --background-color:           #{$d-background-color};
+  --background-color-darker:    #{$d-background-color-darker};
+
+  --selected-background-color:  #{$d-selected-background-color};
+
+  --field-background-color:     #{$d-field-background-color};
+
+  --button-background-color:    #{$d-button-background-color};
+
+  --picture-background-color:   #{$d-picture-background-color};
+
+  --balloon-background-color:   #{$d-balloon-background-color};
+
+  // Borders
+  --border-color:               #{$d-border-color};
+
+  --field-border-color:         #{$d-field-border-color};
+  --strong-field-border-color:  #{$d-strong-field-border-color};
+
+  --focused-border-color:       #{$d-focused-border-color};
+
+  // Buttons
+
+  --button-type-color: #{$d-button-type-color};
+
+  --button-border-color: #{$d-button-border-color};
+
+  --button-background-color: #{$d-button-background-color};
+  --button-background-color-hovered: #{$d-button-background-color-hovered};
+  --button-background-color-activated: #{$d-button-background-color-activated};
+
+  // Code
+  --code-type-color: #{$d-code-type-color};
+  --code-type-color-light: #{$d-code-type-color-light};
+  --code-type-color-lighter: #{$d-code-type-color-lighter};
+
+  --code-red: #{$d-code-red};
+  --code-orange: #{$d-code-orange};
+  --code-yellow: #{$d-code-yellow};
+  --code-green: #{$d-code-green};
+  --code-cyan: #{$d-code-cyan};
+  --code-blue: #{$d-code-blue};
+  --code-purple: #{$d-code-purple};
+  --code-magenta: #{$d-code-magenta};
+
+  --code-background-color: #{$d-code-background-color};
+
+  --code-selected-background-color: #{$d-code-selected-background-color};
+}
+
+/*
+** Colors, light mode
+*/
+
+body.light {
+  color-scheme: light;
+
+  // Colors
+  --color-1:                    #{$l-color-1};
+  --color-1-darker:             #{$l-color-1-darker};
+
+  --color-2:                    #{$l-color-2};
+  --color-2-darker:             #{$l-color-2-darker};
+
+  // Typography
+  --strong-type-color:          #{$l-strong-type-color};
+  --type-color:                 #{$l-type-color};
+  --light-type-color:           #{$l-light-type-color};
+
+  --selected-type-color:        #{$l-selected-type-color};
+
+  --placeholder-type-color:     #{$l-placeholder-type-color};
+
+  --button-type-color:          #{$l-button-type-color};
+
+  // Backgrounds
+  --background-color:           #{$l-background-color};
+  --background-color-darker:    #{$l-background-color-darker};
+
+  --selected-background-color:  #{$l-selected-background-color};
+
+  --field-background-color:     #{$l-field-background-color};
+
+  --button-background-color:    #{$l-button-background-color};
+
+  --picture-background-color:   #{$l-picture-background-color};
+
+  --balloon-background-color:   #{$l-balloon-background-color};
+
+  // Borders
+  --border-color:               #{$l-border-color};
+
+  --field-border-color:         #{$l-field-border-color};
+  --strong-field-border-color:  #{$l-strong-field-border-color};
+
+  --focused-border-color:       #{$l-focused-border-color};
+
+  // Buttons
+
+  --button-type-color: #{$l-button-type-color};
+
+  --button-border-color: #{$l-button-border-color};
+
+  --button-background-color: #{$l-button-background-color};
+  --button-background-color-hovered: #{$l-button-background-color-hovered};
+  --button-background-color-activated: #{$l-button-background-color-activated};
+
+  // Code
+  --code-type-color: #{$l-code-type-color};
+  --code-type-color-light: #{$l-code-type-color-light};
+  --code-type-color-lighter: #{$l-code-type-color-lighter};
+
+  --code-red: #{$l-code-red};
+  --code-orange: #{$l-code-orange};
+  --code-yellow: #{$l-code-yellow};
+  --code-green: #{$l-code-green};
+  --code-cyan: #{$l-code-cyan};
+  --code-blue: #{$l-code-blue};
+  --code-purple: #{$l-code-purple};
+  --code-magenta: #{$l-code-magenta};
+
+  --code-background-color: #{$l-code-background-color};
+
+  --code-selected-background-color: #{$l-code-selected-background-color};
+}

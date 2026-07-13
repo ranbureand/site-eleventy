@@ -1,0 +1,12 @@
+---
+layout: posts
+mode: dark
+title: All posts
+tags: postsPage
+pagination:
+  data: collections.posts
+  size: 8
+  addAllPagesToCollections: true
+  reverse: true
+permalink: "/posts/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber | plus: 1 }}/{% endif %}index.html"
+---

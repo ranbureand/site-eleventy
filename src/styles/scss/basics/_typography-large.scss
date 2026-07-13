@@ -1,0 +1,120 @@
+/* Copyright (c) 2017 Andrea Buran [www.andreaburan.com]. All rights reserved */
+
+/*
+** Typography => Large
+*/
+
+.typo-l {
+  // Text-level semantics
+
+  h1,
+  h2 {
+    margin-bottom: em($m-extra-large-line/2, $m-extra-large-size);
+
+    @include font-size($m-extra-large-size, $m-extra-large-line);
+  }
+
+  h3,
+  h4,
+  p {
+    margin-bottom: em($m-large-line/2, $m-large-size);
+
+    @include font-size($m-large-size, $m-large-line);
+  }
+
+  h5,
+  h6 {
+    margin-bottom: em($m-medium-line/2, $m-medium-size);
+
+    @include font-size($m-medium-size, $m-medium-line);
+  }
+
+  ul,
+  ol {
+    margin-bottom: em($m-large-line/2);
+    padding-left: em($m-gut*2, $m-large-size);
+  }
+
+  li {
+    @include font-size($m-large-size, $m-large-line);
+  }
+
+  li:before {
+    width: em($m-gut*2, $m-large-size);
+    margin-left: em(-$m-gut*2, $m-large-size);
+  }
+
+  ul ul,
+  ol ol {
+    padding-left: em($m-gut*2, $m-large-size);
+  }
+
+  li li {
+    font-size: 1em;
+  }
+
+  @include min-screen(col(8)) {
+    // Text-level semantics
+
+    h1,
+    h2 {
+      margin-bottom: em($d-extra-large-line/2, $d-extra-large-size);
+
+      @include font-size($d-extra-large-size, $d-extra-large-line);
+    }
+
+    h3,
+    h4,
+    p {
+      margin-bottom: em($d-large-line/2, $d-large-size);
+
+      @include font-size($d-large-size, $d-large-line);
+    }
+
+    h5,
+    h6 {
+      margin-bottom: em($d-medium-line/2, $d-medium-size);
+
+      @include font-size($d-medium-size, $d-medium-line);
+    }
+
+    ul,
+    ol {
+      margin-bottom: em($d-large-line/2);
+      padding-left: em($d-gut/2*3);
+    }
+
+    li,
+    dt {
+      @include font-size($d-large-size, $d-large-line);
+    }
+
+    li:before {
+      width: em($d-gut/2*3, $d-large-size);
+      margin-left: em(-$d-gut/2*3, $d-large-size);
+    }
+
+    ul ul,
+    ol ol {
+      padding-left: em($d-gut, $d-large-size);
+    }
+
+    li li {
+      font-size: 1em;
+    }
+  }
+  @include min-screen(col(12)) {
+    // Text-level semantics
+
+    li:before {
+      width: col(4, $d-large-size);
+      margin-left: col(-4, $d-large-size);
+      padding-right: em($d-gut, $d-large-size);
+    }
+
+    ul,
+    ol {
+      padding-left: 0;
+    }
+  }
+}

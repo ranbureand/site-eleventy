@@ -1,0 +1,39 @@
+    {%- comment %} whitespace {%- endcomment %}
+    <!-- Open Graph protocol -->
+    <meta property="og:title" content="
+      {%- if title %}
+        {{- title | markdownify | strip_html | escape | strip }} · {{ site.title | escape }}
+      {%- else %}
+        {{- site.title | escape }}
+      {%- endif %}">
+    <meta property="og:description" content="
+      {%- if excerpt %}
+        {{- excerpt | markdownify | strip_html | escape | strip }}
+      {%- elsif description %}
+        {{- description | markdownify | strip_html | escape | strip }}
+      {%- else %}
+        {{- site.description | escape }}
+      {%- endif %}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ page.url | prepend: site.url }}">
+    <meta property="og:image" content="
+      {%- if layout == 'project' %}{{ site.url }}/media/projects-optimized/{{ title | strip_html | slugify: 'latin' }}/thumbnails/1440/{{ preview_image }}?v={{ site.version }}
+      {%- else %}{{ site.url }}/media/sundries/cover/cover_00.jpg?v={{ site.version }}
+      {%- endif %}">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:alt" content="
+      {%- if excerpt %}
+        {{- excerpt | strip_html | escape | strip }}
+      {%- elsif description %}
+        {{- description | strip_html | escape | strip }}
+      {%- else %}
+        {{- site.description | escape }}
+      {%- endif %}">
+    <meta property="og:image:width" content="
+      {%- if layout == 'project' %}1440
+      {%- else %}640
+      {%- endif %}">
+    <meta property="og:image:height" content="
+      {%- if layout == 'project' %}2160
+      {%- else %}640
+      {%- endif %}">

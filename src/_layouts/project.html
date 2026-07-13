@@ -1,0 +1,33 @@
+---
+layout: base
+mode: light
+---
+      <main class="canvas-article foreground">
+        <article class="article layout-2d">
+
+          <header class="article-head column-2d-l typo-sl">
+            <h1>{{ title | markdownify | remove: '<p>' | remove: '</p>' | strip }}</h1>
+          </header>
+
+          <div class="column-2d-l separator"></div>
+
+          {%- if time %}
+          <div class="article-time column-2d-s-1 typo-l">
+            {{ time | markdownify | strip }}
+          </div>
+          {%- endif %}
+
+          {%- if exordium %}
+          <div class="article-exordium column-2d-m-2 typo-l">
+            {{ exordium | markdownify | strip }}
+          </div>
+          {%- endif %}
+
+          <div class="article-body column-2d-m-2 typo-m">
+            {{ content | strip }}
+          </div>
+
+        </article>
+      </main>
+
+      {% include projects.html %}

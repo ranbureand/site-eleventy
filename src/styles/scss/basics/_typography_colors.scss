@@ -1,0 +1,113 @@
+/* Copyright (c) 2017 Andrea Buran [www.andreaburan.com]. All rights reserved */
+
+/*
+** Typography => colors
+*/
+
+body {
+  color: var(--strong-type-color);
+}
+
+:not(code *)::selection {
+  color: var(--selected-type-color);
+  background-color: var(--selected-background-color);
+}
+
+.color-1 {
+  color: var(--color-1);
+}
+
+.color-2 {
+  color: var(--color-2);
+}
+
+.toc {
+  &:before {
+    border-left-color: var(--border-color);
+  }
+}
+
+// Links
+
+a {
+  &:hover {
+    color: var(--color-1);
+  }
+
+  &:active {
+    color: var(--color-1-darker);
+  }
+}
+
+.current {
+  a {
+    color: var(--color-1);
+    &:after {
+      color: var(--strong-type-color);
+    }
+  }
+}
+
+// Text-level semantics
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--strong-type-color);
+}
+
+dt {
+  color: var(--strong-type-color);
+}
+
+strong {
+  color: var(--strong-type-color);
+}
+
+q {
+  color: var(--strong-type-color);
+}
+
+// Grouping content
+
+code,
+kbd,
+mark,
+pre {
+  background-color: var(--code-background-color);
+}
+
+code,
+samp,
+kbd,
+mark {
+  color: var(--type-color);
+}
+
+pre {
+  code {
+    background-color: transparent;
+  }
+}
+
+blockquote {
+  border-left-color: var(--border-color);
+}
+
+hr {
+  border-top-color: var(--border-color);
+}
+
+// Embedded content
+
+img,
+iframe {
+  background-color: var(--picture-background-color);
+}
+
+img {
+  color: var(--light-type-color);
+}

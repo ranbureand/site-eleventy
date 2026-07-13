@@ -1,0 +1,113 @@
+/* Copyright (c) 2017 Andrea Buran [www.andreaburan.com]. All rights reserved */
+
+/*
+** Jots tags
+*/
+
+.tags {
+  margin-top: em(-$m-large-line/2);
+  margin-bottom: em(-$m-large-line/2);
+
+  @include min-screen(col(8)) {
+    margin-top: em(-$d-large-line/2);
+    margin-bottom: em(-$d-large-line/2);
+  }
+  @include min-screen(col(12)) {
+    margin-top: em(-$d-small-line/2);
+    margin-bottom: em(-$d-small-line/2);
+  }
+}
+
+.tag {
+  position: relative;
+
+  width: 100/1*1%;
+
+  counter-increment: tag;
+
+  @include font-size($m-small-size, $m-small-line);
+  &:before {
+    float: left;
+
+    min-width: em($m-small-line/2*3, $m-small-size);
+    height: em($m-small-line/2*3, $m-small-size);
+    margin-top: em($m-small-line/4, $m-small-size);
+    margin-right: em($m-gut/2, $m-small-size);
+
+    content: counter(tag);
+    transition-timing-function: ease-out;
+    transition-property: background-color;
+    text-align: center;
+
+    border-radius: 50%;
+
+    @include font-size($m-small-size, $m-small-line/2*3, $m-small-size);
+  }
+  &:hover {
+    &:before {
+      transition-duration: $duration;
+    }
+  }
+  &:active {
+    &:before {
+      transition-duration: 0.0s;
+    }
+  }
+
+  a {
+    font-weight: $normal;
+
+    position: relative;
+
+    display: block;
+
+    padding: em($m-small-line/2, $m-small-size) em($m-gut/2, $m-small-size);
+  }
+  @include min-screen(col(8)) {
+    width: 100/2*1%;
+
+    @include font-size($d-small-size, $d-small-line);
+
+    &:before {
+      min-width: em($d-small-line/2*3, $d-small-size);
+      height: em($d-small-line/2*3, $d-small-size);
+      margin-top: em($d-small-line/4, $d-small-size);
+      margin-right: em($d-gut/2, $d-small-size);
+
+      @include font-size($d-small-size, $d-small-line/2*3, $d-small-size);
+    }
+
+    a {
+      padding: em($d-small-line/2, $d-small-size) em($d-gut, $d-small-size);
+    }
+  }
+  @include min-screen(col(12)) {
+    width: 100/3*1%;
+    padding-right: em($d-gut/2, $d-small-size);
+    padding-left: em($d-gut/2, $d-small-size);
+  }
+  @include min-screen(col(16)) {
+    width: 100/4*1%;
+  }
+}
+
+/*
+** Colors
+*/
+
+.tag {
+  &:before {
+    color: var(--background-color);
+    background-color: var(--strong-type-color);
+  }
+  &:hover {
+    &:before {
+      background-color: var(--color-1);
+    }
+  }
+  &:active {
+    &:before {
+      background-color: var(--color-1-darker);
+    }
+  }
+}

@@ -1,0 +1,22 @@
+    {%- comment %} whitespace {%- endcomment %}
+    <div class="canvas-header foreground">
+      <div class="buffer-header base-stalactite">
+        <header class="header foreground layout-2d">
+          <h1 class="header-title"><a href="{{ site.baseurl }}/">Andrea Buran<span class="hidden">’s Site</span> <sup class="color-1">5.0</sup></a></h1>
+          <ul class="header-navigation">
+            <li{% if layout == 'post' or page.url contains '/posts/' %} class="current"{% endif %}>
+              <a href="{{ site.baseurl }}/posts/index.html"><span class="hidden">All</span> Posts</a>
+            </li>
+            <li{% if layout == 'project' or layout == 'categories' %} class="current"{% endif %}>
+              <a href="{{ site.baseurl }}/projects/all.html"><span class="hidden">All</span> Proj<span class="hidden">ects</span></a>
+            </li>
+            <li{% if page.url contains '/jots/' %} class="current"{% endif %}>
+              <a href="{{ site.baseurl }}/jots/index.html"><span class="hidden">All</span> Jots</a>
+            </li>
+            <li>
+              <a href="#" id="mode-switch" onclick="toggleModeDisplay(event)"><span class="screen-reader-only">Color mode toggle</span></a>
+            </li>
+          </ul>
+        </header>
+      </div>
+    </div>

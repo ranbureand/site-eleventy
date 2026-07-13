@@ -1,0 +1,324 @@
+/* Copyright (c) 2017 Andrea Buran [www.andreaburan.com]. All rights reserved */
+
+/*
+** Previews
+*/
+
+.projects-items {
+  padding-top: em($m-base-rhythm);
+
+  > li {
+    width: 100/2*1%;
+    margin-bottom: em($m-base-rhythm*2);
+    padding-right: em($m-gut/2);
+    padding-left: em($m-gut/2);
+
+    opacity: 1;
+
+    @include animation(element-in);
+  }
+  > li:has(.projects-item-slides) {
+    width: 100/1*1%;
+  }
+  > li:has(.projects-item) {
+    width: 100/2*1%;
+  }
+  @include min-screen(col(8)) {
+    padding-top: em($d-base-rhythm);
+    > li {
+      margin-bottom: em($d-base-rhythm*2);
+      padding-right: em($d-gut/2);
+      padding-left: em($d-gut/2);
+    }
+  }
+  @include min-screen(col(12)) {
+    > li {
+      padding-right: em($d-gut*4);
+      padding-left: em($d-gut*4);
+    }
+  }
+  @include min-screen(col(16)) {
+    > li {
+      padding-right: em($d-gut*2);
+      padding-left: em($d-gut*2);
+    }
+    > li:has(.projects-item) {
+      width: 100/3*1%;
+    }
+  }
+}
+
+@for $i from 0 through 24 {
+  .projects-items > li:nth-child(#{$i + 1}n) {
+    animation-delay: #{$i * $duration/16 };
+  }
+}
+
+.projects-slides {
+  position: relative;
+
+  display: block;
+}
+
+.projects-item {
+  position: relative;
+
+  display: block;
+
+  text-decoration: none;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 100/2*3%;
+
+    content: "";
+    transition-timing-function: ease-out, ease-out, ease-out, ease-out;
+    transition-duration: $duration, $duration, $duration, $duration;
+    transition-property: height, opacity, transform, width;
+    transform-origin: 50% 0 ;
+
+    opacity: 0.0;
+  }
+
+  .projects-item-image {
+    position: relative;
+
+    padding-bottom: 100/2*3%;
+
+    transition-timing-function: ease-out;
+    transition-duration: $duration;
+    transition-property: transform;
+    transform: translate(0, 0);
+
+    @include font-size($m-tiny-size, $m-tiny-line);
+    @include min-screen(col(8)) {
+      .device {
+        padding: em($d-gut*3);
+
+        img {
+          border-radius: em($d-gut);
+          box-shadow:
+          0 2px $d-gut rgba(0, 0, 0, 0.2),
+          0 4px $d-gut*2 rgba(0, 0, 0, 0.2),
+          0 0 0 1px rgba(0, 0, 0, 0.2),
+          0 0 0 2px rgba(255, 255, 255, 0.2);
+        }
+      }
+    }
+
+    > img {
+      position: absolute;
+      z-index: 1;
+    }
+
+    .device {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      display: flex;
+
+      width: 100%;
+      height: 100%;
+      padding: em($m-gut*5);
+
+      align-items: center;
+      flex-flow: row nowrap;
+      justify-content: center;
+
+      img {
+        max-height: 100%;
+
+        border-radius: em($m-gut);
+        background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+        linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+        background-repeat: no-repeat;
+        box-shadow:
+        0 2px $m-gut rgba(0, 0, 0, 0.2),
+        0 4px $m-gut*2 rgba(0, 0, 0, 0.2),
+        0 0 0 1px rgba(0, 0, 0, 0.2),
+        0 0 0 2px rgba(255, 255, 255, 0.2);
+      }
+    }
+  }
+
+  &:hover {
+    &:before {
+      opacity: 1.0;
+
+      @include adjust-dimension(width, $m-gut/2*3);
+    }
+
+    .projects-item-image {
+      transform: translate(0, em(-$m-gut/2*3, $m-tiny-size));
+    }
+
+    .projects-item-title {
+      transition-duration: 0.2s;
+    }
+  }
+
+  &:active {
+    .projects-item-image {
+      transition-duration: 0.0s;
+      transform: translate(0, 0);
+    }
+
+    .projects-item-title {
+      transition-duration: 0.0s;
+    }
+  }
+  @include min-screen(col(8)) {
+    .projects-item-image {
+      @include font-size($d-tiny-size, $d-tiny-line);
+    }
+
+    &:hover {
+      &:before {
+        @include adjust-dimension(width, $d-gut);
+      }
+
+      .projects-item-image {
+        transform: translate(0, em(-$d-gut, $d-tiny-size));
+      }
+    }
+
+    &:active {
+      .projects-item-image {
+        transition-duration: 0.0s;
+        transform: translate(0, 0);
+      }
+    }
+  }
+}
+
+.projects-item-title {
+  font-weight: $normal;
+
+  margin-top: em($m-large-line/2, $m-large-size);
+
+  transition-timing-function: ease-in-out;
+  transition-property: color;
+
+  @include font-size($m-large-size, $m-large-line);
+
+  sup {
+    text-decoration: none;
+  }
+  span {
+    &:before {
+      content: " → ";
+    }
+  }
+  @include min-screen(col(8)) {
+    margin-top: em($d-large-line/2, $d-large-size);
+
+    @include font-size($d-large-size, $d-large-line);
+  }
+}
+
+.projects-item-tags {
+  font-style: italic;
+
+  margin-top: em($m-tiny-line/4, $m-tiny-size);
+
+  @include font-size($m-tiny-size, $m-tiny-line);
+  @include face(serif);
+
+  @include min-screen(col(8)) {
+    margin-top: em($d-small-line/4, $d-small-size);
+
+    @include font-size($d-small-size, $d-small-line);
+  }
+}
+
+.projects-item-time {
+  margin-top: em($m-small-line/4, $m-small-size);
+
+  @include font-size($m-small-size, $m-small-line);
+  @include face(mono);
+
+  @include min-screen(col(8)) {
+    margin-top: em($d-small-line/4, $d-small-size);
+
+    @include font-size($d-small-size, $d-small-line);
+  }
+}
+
+.projects-item.current {
+  cursor: default;
+
+  &:before {
+    opacity: 1.0;
+
+    @include adjust-dimension(width, $m-gut/2*3);
+  }
+
+  .projects-item-image {
+    transform: translate(0, em(-$m-gut/2*3, $m-tiny-size));
+  }
+  @include min-screen(col(8)) {
+    &:before {
+      @include adjust-dimension(width, $d-gut);
+    }
+
+    .projects-item-image {
+      transform: translate(0, em(-$d-gut, $d-tiny-size));
+    }
+  }
+}
+
+/*
+** Colors
+*/
+
+.projects-item {
+  &:before {
+    background-color: var(--picture-background-color);
+  }
+
+  .projects-item-image {
+    background-color: var(--picture-background-color);
+  }
+
+  &:hover {
+    .projects-item-title {
+      color: var(--color-1);
+    }
+  }
+
+  &:active {
+    .projects-item-title {
+      color: var(--color-1-darker);
+    }
+  }
+}
+
+.projects-item.current {
+  .projects-item-title {
+    color: var(--color-1);
+  }
+}
+
+.projects-item-title {
+  color: var(--strong-type-color);
+  span {
+    color: var(--color-1);
+    &:before {
+      color: var(--strong-type-color);
+    }
+  }
+}
+
+.projects-item-tags,
+.projects-item-time {
+  color: var(--type-color);
+}

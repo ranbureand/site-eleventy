@@ -1,0 +1,19 @@
+      {%- assign projectList = collections.projects | reverse
+      %}
+      {%- assign projectList = projectList
+        | slice: 0, 2
+      %}
+      {%- assign projectList = projectList
+        | reverse
+      %}
+      {%- for project in projectList %}
+         {%- capture projectCount %} {{ projectCount | plus: 1 }} {% endcapture %}
+      {%- endfor %}
+
+        <div class="column-2d-l">
+          <ul class="projects-items layout-1d-rtl">
+            {%- for project in projectList reversed %}
+            {% include projects-item.html project=project %}
+            {%- endfor %}
+          </ul>
+        </div>

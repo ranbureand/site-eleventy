@@ -1,0 +1,159 @@
+{%- capture __html -%}
+{%- if include.size == "xl" %}
+  {%- assign video_size = 'video-link-xl' %}
+{%- elsif include.size == "l" %}
+  {%- assign video_size = 'video-link-l' %}
+{%- elsif include.size == "sm" %}
+  {%- assign video_size = 'video-link-sm' %}
+{%- elsif include.size == "s" %}
+  {%- assign video_size = 'video-link-s' %}
+{%- elsif include.size == "xs" %}
+  {%- assign video_size = 'video-link-xs' %}
+{%- else %}
+  {%- assign video_size = 'video-link-m' %}
+{%- endif %}
+
+{%- assign column = 72 %}
+{%- assign w_float = include.w | times: 1.0 %}
+
+{%- if include.path %}
+  {%- assign video_path = include.path %}
+{%- elsif layout == 'project' %}
+  {%- assign video_project_name = page.fileSlug %}
+  {%- assign video_path = 'projects-optimized/'
+    | append: video_project_name
+  %}
+{%- elsif layout == 'post' %}
+  {%- assign video_post_name = page.fileSlug %}
+  {%- assign video_path = 'posts-optimized/'
+    | append: video_post_name
+  %}
+{%- endif %}
+
+<figure class="{{ video_size }}" id="{{ include.src }}">
+  {%- if include.h and include.w%}
+  <a class="ratio"
+    href="{{ include.link }}"
+    style="padding-bottom: {{ include.h | divided_by: w_float | times: 100 }}%;{% if include.color %}background-color: {{ include.color }};{% endif %}" target="blank"
+    >
+  {%- else %}
+  <a href="{{ include.link }}" target="blank">
+  {%- endif %}
+    <img
+      {% if include.loading == "eager" %}
+      loading="eager"
+      {% else %}
+      loading="lazy"
+      {% endif %}
+      {% if include.size == "xl" %}
+      src="
+      ../media/{{ video_path }}/images/1440/{{ include.src }}
+      "
+      srcset="
+      ../media/{{ video_path }}/images/2880/{{ include.src }} {{ column | times: 16 }}w,
+      ../media/{{ video_path }}/images/1440/{{ include.src }} {{ column | times: 16 }}w,
+      ../media/{{ video_path }}/images/2160/{{ include.src }} {{ column | times: 12 }}w,
+      ../media/{{ video_path }}/images/1080/{{ include.src }} {{ column | times: 12 }}w,
+      ../media/{{ video_path }}/images/1440/{{ include.src }} {{ column | times: 8 }}w,
+      ../media/{{ video_path }}/images/720/{{ include.src }} {{ column | times: 8 }}w,
+      ../media/{{ video_path }}/images/720/{{ include.src }} 360w,
+      ../media/{{ video_path }}/images/360/{{ include.src }} 360w,
+      "
+      sizes="
+      (min-width: 72em) {{ column | times: 16 | divided_by: 16 | floor }}em,
+      (min-width: 54em) {{ column | times: 12 | divided_by: 16 | floor }}em,
+      (min-width: 30em) {{ column | times: 8 | divided_by: 16 | floor }}em,
+      (min-width: 0) {{ 360 | divided_by: 16 | floor }}em
+      "
+      {% elsif include.size == "l" %}
+      src="
+      ../media/{{ video_path }}/images/1080/{{ include.src }}
+      "
+      srcset="
+      ../media/{{ video_path }}/images/2160/{{ include.src }} {{ column | times: 12 }}w,
+      ../media/{{ video_path }}/images/1080/{{ include.src }} {{ column | times: 12 }}w,
+      ../media/{{ video_path }}/images/1440/{{ include.src }} {{ column | times: 8 }}w,
+      ../media/{{ video_path }}/images/720/{{ include.src }} {{ column | times: 8 }}w,
+      ../media/{{ video_path }}/images/720/{{ include.src }} 360w,
+      ../media/{{ video_path }}/images/360/{{ include.src }} 360w,
+      "
+      sizes="
+      (min-width: 54em) {{ column | times: 12 | divided_by: 16 | floor }}em,
+      (min-width: 30em) {{ column | times: 8 | divided_by: 16 | floor }}em,
+      (min-width: 0) {{ 360 | divided_by: 16 | floor }}em
+      "
+      {% elsif include.size == "sm" %}
+      src="
+      ../media/{{ video_path }}/images/360/{{ include.src }}
+      "
+      srcset="
+      ../media/{{ video_path }}/images/1440/{{ include.src }} {{ column | times: 6 }}w,
+      ../media/{{ video_path }}/images/720/{{ include.src }} {{ column | times: 6 }}w,
+      ../media/{{ video_path }}/images/720/{{ include.src }} {{ column | times: 4 }}w,
+      ../media/{{ video_path }}/images/360/{{ include.src }} {{ column | times: 4 }}w,
+      ../media/{{ video_path }}/images/720/{{ include.src }} 360w,
+      ../media/{{ video_path }}/images/360/{{ include.src }} 360w,
+      "
+      sizes="
+      (min-width: 54em) {{ column | times: 6 | divided_by: 16 | floor }}em,
+      (min-width: 30em) {{ column | times: 4 | divided_by: 16 | floor }}em,
+      (min-width: 0) {{ 360 | divided_by: 16 | floor }}em
+      "
+      {% elsif include.size == "s" %}
+      src="
+      ../media/{{ video_path }}/images/360/{{ include.src }}
+      "
+      srcset="
+      ../media/{{ video_path }}/images/720/{{ include.src }} {{ column | times: 4 }}w,
+      ../media/{{ video_path }}/images/360/{{ include.src }} {{ column | times: 4 }}w,
+      ../media/{{ video_path }}/images/720/{{ include.src }} 360w,
+      ../media/{{ video_path }}/images/360/{{ include.src }} 360w,
+      "
+      sizes="
+      (min-width: 30em) {{ column | times: 4 | divided_by: 16 | floor }}em,
+      (min-width: 0) {{ 360 | divided_by: 16 | floor }}em
+      "
+      {% elsif include.size == "xs" %}
+      src="
+      ../media/{{ video_path }}/images/360/{{ include.src }}
+      "
+      srcset="
+      ../media/{{ video_path }}/images/720/{{ include.src }} {{ column | times: 2 }}w,
+      ../media/{{ video_path }}/images/360/{{ include.src }} {{ column | times: 2 }}w,
+      ../media/{{ video_path }}/images/720/{{ include.src }} 240w,
+      ../media/{{ video_path }}/images/360/{{ include.src }} 240w,
+      "
+      sizes="
+      (min-width: 30em) {{ column | times: 2 | divided_by: 16 | floor }}em,
+      (min-width: 0) {{ 240 | divided_by: 16 | floor }}em
+      "
+      {% else %}
+      src="
+      ../media/{{ video_path }}/images/720/{{ include.src }}
+      "
+      srcset="
+      ../media/{{ video_path }}/images/1440/{{ include.src }} {{ column | times: 8 }}w,
+      ../media/{{ video_path }}/images/720/{{ include.src }} {{ column | times: 8 }}w,
+      ../media/{{ video_path }}/images/720/{{ include.src }} 360w,
+      ../media/{{ video_path }}/images/360/{{ include.src }} 360w,
+      "
+      sizes="
+      (min-width: 30em) {{ column | times: 8 | divided_by: 16 | floor }}em,
+      (min-width: 0) {{ 360 | divided_by: 16 | floor }}em
+      "
+      {% endif %}
+      alt="
+      {% if include.alt %}{{ include.alt }}{% else %}{{ title }}{% endif %}
+      "
+    />
+    {%- if include.text %}
+    <div class="watch"><div>{{ include.text}}</div></div>
+    {%- endif %}
+  </a>
+  {%- if include.caption %}
+  <figcaption class="typo-s">
+    {{ include.caption | markdownify }}
+  </figcaption>
+  {%- endif %}
+</figure>{%- endcapture -%}
+{{ __html | no_blank_lines }}

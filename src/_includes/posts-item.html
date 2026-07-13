@@ -1,0 +1,9 @@
+            {%- comment %} whitespace {%- endcomment %}
+            <li class="element-1d">
+              <a class="posts-item serif{% if post.data.title == title %} current{% endif %}" href="{{ post.url | prepend: site.baseurl }}">
+                <div class="posts-item-excerpt">{{ post.data.excerpt | markdownify | remove: '<p>' | remove: '</p>' | strip }}</div>
+                <div class="posts-item-title sans">{{ post.data.title | markdownify | remove: '<p>' | remove: '</p>' | strip }}</div>
+                <div class="posts-item-tags">{% for tag in post.data.tags %}{% if forloop.last == true %}{{tag}}{% else %}{{tag}}, {% endif %}{% endfor %}</div>
+                <div class="posts-item-date">{{ post.date | date_to_long_string }}</div>
+              </a>
+            </li>

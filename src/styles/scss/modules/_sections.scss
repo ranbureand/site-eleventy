@@ -1,0 +1,289 @@
+/* Copyright (c) 2017 Andrea Buran [www.andreaburan.com]. All rights reserved */
+
+/*
+** Canvas
+*/
+
+[class*="canvas"] {
+  padding-right: em($m-gut/2*3);
+  padding-left: em($m-gut/2*3);
+
+  @include min-screen(col(8)) {
+    padding-right: em($d-gut);
+    padding-left: em($d-gut);
+  }
+  @include min-screen(col(12)) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+/*
+** Splash
+*/
+
+.splash {
+  opacity: 1;
+
+  @include animation(element-in-up);
+}
+
+
+/*
+** About
+*/
+
+.about {
+  padding-top: em($m-base-rhythm*2);
+  padding-bottom: em($m-base-rhythm*2);
+
+  opacity: 1;
+
+  @include animation(element-in-up);
+  @include min-screen(col(8)) {
+    padding-top: em($d-base-rhythm*1);
+    padding-bottom: em($d-base-rhythm*1);
+  }
+}
+
+/*
+** Carousel
+*/
+
+.carousel {
+  padding-top: em($m-base-rhythm*2);
+  padding-bottom: em($m-base-rhythm*4);
+
+  opacity: 1;
+
+  @include animation(element-in-up);
+  @include min-screen(col(8)) {
+    padding-top: em($d-base-rhythm*1);
+    padding-bottom: em($d-base-rhythm*4);
+  }
+}
+
+/*
+** Posts
+*/
+
+.posts {
+  padding-top: em($m-base-rhythm*2);
+  padding-bottom: em($m-base-rhythm*2);
+
+  opacity: 1;
+
+  @include animation(element-in-up);
+  @include min-screen(col(8)) {
+    padding-top: em($d-base-rhythm*1);
+    padding-bottom: em($d-base-rhythm*2);
+  }
+}
+
+.posts-head {
+  h1,
+  h2,
+  p {
+    margin-bottom: 0;
+    display: inline;
+  }
+  h2 {
+    &:after {
+      content: ".\00a0";
+    }
+  }
+  @include min-screen(col(16)) {
+    h1,
+    h2,
+    p {
+      @include font-size($t-splash-large-size, $t-splash-large-line);
+    }
+  }
+}
+
+.posts-subhead {
+  @include face(mono);
+}
+
+.posts-exordium {
+  .footnotes {
+    > ol {
+      > li {
+        &:before {
+          content: "\002020";
+        }
+      }
+    }
+  }
+}
+
+/*
+** Projects
+*/
+
+.projects {
+  padding-top: em($m-base-rhythm*2);
+  padding-bottom: em($m-base-rhythm*4);
+
+  opacity: 1;
+
+  @include animation(element-in-up);
+  @include min-screen(col(8)) {
+    padding-top: em($d-base-rhythm*1);
+    padding-bottom: em($d-base-rhythm*2);
+  }
+}
+
+.projects-head {
+  h1,
+  h2,
+  p {
+    margin-bottom: 0;
+    display: inline;
+  }
+  h2 {
+    &:after {
+      content: ".\00a0";
+    }
+  }
+  @include min-screen(col(16)) {
+    h1,
+    h2,
+    p {
+      @include font-size($t-splash-large-size, $t-splash-large-line);
+    }
+  }
+}
+
+.projects-subhead {
+  @include face(mono);
+}
+
+.projects-exordium {
+  .footnotes {
+    > ol {
+      > li {
+        &:before {
+          content: "\002020";
+        }
+      }
+    }
+  }
+}
+
+/*
+** Jots
+*/
+
+.jots {
+  padding-top: em($m-base-rhythm*2);
+  padding-bottom: em($m-base-rhythm*4);
+
+  opacity: 1;
+
+  @include animation(element-in-up);
+  @include min-screen(col(8)) {
+    padding-top: em($d-base-rhythm*1);
+    padding-bottom: em($d-base-rhythm*2);
+  }
+}
+
+.jots-head {
+  h1,
+  h2,
+  p {
+    margin-bottom: 0;
+    display: inline;
+  }
+  h2 {
+    &:after {
+      content: ".\00a0";
+    }
+  }
+  @include min-screen(col(16)) {
+    h1,
+    h2,
+    p {
+      @include font-size($t-splash-large-size, $t-splash-large-line);
+    }
+  }
+}
+
+.jots-tags {
+  padding-top: em($m-base-rhythm*4);
+  padding-bottom: em($m-base-rhythm*2);
+
+  opacity: 1;
+
+  @include animation(element-in-up);
+  @include min-screen(col(8)) {
+    padding-top: em($d-base-rhythm*2);
+    padding-bottom: em($d-base-rhythm*2);
+  }
+}
+
+/*
+** Article
+*/
+
+.article {
+  padding-top: em($m-base-rhythm*2);
+  padding-bottom: em($m-base-rhythm*4);
+
+  opacity: 1;
+
+  @include animation(element-in-up);
+  @include min-screen(col(8)) {
+    padding-top: em($d-base-rhythm*1);
+    padding-bottom: em($d-base-rhythm*4);
+  }
+}
+
+.article-time,
+.article-date {
+  @include face(mono);
+}
+
+.article-body {
+  @include face(serif);
+}
+
+/*
+** Colors
+*/
+
+body {
+  background-color: var(--background-color-darker);
+}
+
+.background {
+  background-color: var(--background-color-darker);
+}
+
+.foreground {
+  background-color: var(--background-color);
+}
+
+.article-body {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--strong-type-color);
+    a {
+      &:before,
+      &:after {
+        color: var(--color-1);
+      }
+    }
+    a:hover {
+      color: var(--strong-type-color);
+      &:before,
+      &:after {
+        color: var(--color-1);
+      }
+    }
+  }
+}

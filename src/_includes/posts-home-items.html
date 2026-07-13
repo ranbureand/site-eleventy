@@ -1,0 +1,9 @@
+        {%- assign postList = collections.posts | reverse
+        %}
+        <div class="column-2d-l">
+          <ul class="posts-items layout-1d-ltr">
+            {%- for post in postList limit: include.postLimit %}
+            {% include posts-item.html post=post %}
+            {% endfor %}
+          </ul>
+        </div>

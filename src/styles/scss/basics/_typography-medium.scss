@@ -1,0 +1,291 @@
+/* Copyright (c) 2017 Andrea Buran [www.andreaburan.com]. All rights reserved */
+
+/*
+** Typography => Medium
+*/
+
+.typo-m {
+
+  // Inline elements
+
+  h1,
+  h2,
+  h3 {
+    margin-bottom: em($m-extra-large-line/2, $m-extra-large-size);
+
+    @include font-size($m-extra-large-size, $m-extra-large-line);
+    scroll-margin-top: em($m-scroll-offset, $m-extra-large-size);
+  }
+
+  * + h1,
+  * + h2,
+  * + h3 {
+    margin-top: em($m-extra-large-line, $m-extra-large-size);
+
+    scroll-margin-top: em($m-scroll-offset - $m-extra-large-line, $m-extra-large-size);
+  }
+
+  h4,
+  h5 {
+    margin-bottom: em($m-large-line/2, $m-large-size);
+
+    @include font-size($m-large-size, $m-large-line);
+    scroll-margin-top: em($m-scroll-offset, $m-large-size);
+  }
+
+  * + h4,
+  * + h5 {
+    margin-top: em($m-large-line, $m-large-size);
+
+    scroll-margin-top: em($m-scroll-offset - $m-large-line, $m-large-size);
+  }
+
+  h6 {
+    margin-bottom: em($m-medium-line/2, $m-medium-size);
+
+    @include font-size($m-medium-size, $m-medium-line);
+    scroll-margin-top: em($m-scroll-offset, $m-medium-size);
+  }
+
+  * + h6 {
+    margin-top: em($m-medium-line, $m-medium-size);
+
+    scroll-margin-top: em($m-scroll-offset - $m-medium-line, $m-medium-size);
+  }
+
+  p,
+  dd {
+    margin-bottom: em($m-medium-line/2, $m-medium-size);
+
+    @include font-size($m-medium-size, $m-medium-line);
+  }
+
+  ul,
+  ol {
+    margin-bottom: em($m-medium-line/2);
+    padding-left: em($m-gut*2);
+  }
+
+  li,
+  dt {
+    @include font-size($m-medium-size, $m-medium-line);
+  }
+
+  li:before {
+    width: em($m-gut*2, $m-medium-size);
+    margin-left: em(-$m-gut*2, $m-medium-size);
+  }
+
+  ul ul,
+  ol ol {
+    padding-left: em($m-gut*2, $m-medium-size);
+  }
+
+  li li {
+    font-size: 1em;
+  }
+
+  dt {
+    padding-right: em($m-gut/2, $m-medium-size);
+  }
+
+  code {
+    @include font-size($m-small-size, $m-medium-line);
+  }
+
+  // Grouping content
+
+  blockquote {
+    margin-bottom: em($m-medium-line/2);
+  }
+
+  pre {
+    margin-top: 0;
+    //margin-top: em($m-medium-line/2, $m-medium-size);
+    margin-bottom: 0;
+    //margin-bottom: em($m-medium-line/2, $m-medium-size);
+    padding-top: em($m-medium-line/2, $m-medium-size);
+    padding-right: em($m-gut*2, $m-medium-size);
+    padding-bottom: em($m-medium-line/2, $m-medium-size);
+    padding-left: em($m-gut*2, $m-medium-size);
+  }
+
+  hr {
+    margin-top: em($m-medium-line);
+    margin-bottom: em($m-medium-line);
+  }
+
+  // Embedded content
+
+  img {
+    margin-bottom: em($m-medium-line/2, $m-tiny-size);
+
+    @include font-size($m-tiny-size, $m-tiny-line);
+  }
+
+  .toc {
+    &:before {
+      left: 0;
+    }
+  }
+
+  [role="doc-noteref"] {
+    scroll-margin-top: $m-scroll-offset*2;
+  }
+
+  [role="doc-endnote"] {
+    scroll-margin-top: em($m-scroll-offset*2, $m-medium-size);
+  }
+
+  @include min-screen(col(8)) {
+    // Text-level semantics
+
+    h1,
+    h2,
+    h3 {
+      margin-bottom: em($d-extra-large-line/2, $d-extra-large-size);
+
+      @include font-size($d-extra-large-size, $d-extra-large-line);
+      scroll-margin-top: em($d-scroll-offset, $d-extra-large-size);
+    }
+
+    * + h1,
+    * + h2,
+    * + h3 {
+      margin-top: em($d-extra-large-line, $d-large-size);
+
+      scroll-margin-top: em($d-scroll-offset - $d-extra-large-line, $d-extra-large-size);
+    }
+
+    h4,
+    h5 {
+      margin-bottom: em($d-large-line/2, $d-large-size);
+
+      @include font-size($d-large-size, $d-large-line);
+      scroll-margin-top: em($d-scroll-offset, $d-large-size);
+    }
+
+    * + h4,
+    * + h5 {
+      margin-top: em($d-large-line, $d-large-size);
+
+      scroll-margin-top: em($d-scroll-offset - $d-large-line, $d-large-size);
+    }
+
+    h6 {
+      margin-bottom: em($d-medium-line/2, $d-medium-size);
+
+      @include font-size($d-medium-size, $d-medium-line);
+      scroll-margin-top: em($d-scroll-offset, $d-medium-size);
+    }
+
+    * + h6 {
+      margin-top: em($d-medium-line, $d-medium-size);
+
+      scroll-margin-top: em($d-scroll-offset - $d-medium-line, $d-medium-size);
+    }
+
+    p,
+    dd {
+      margin-bottom: em($d-medium-line/2, $d-medium-size);
+
+      @include font-size($d-medium-size, $d-medium-line);
+    }
+
+    ul,
+    ol {
+      margin-bottom: em($d-medium-line/2);
+      padding-left: em($d-gut/2*3);
+    }
+
+    li,
+    dt {
+      @include font-size($d-medium-size, $d-medium-line);
+    }
+
+    li:before {
+      width: em($d-gut/2*3, $d-medium-size);
+      margin-left: em(-$d-gut/2*3, $d-medium-size);
+    }
+
+    ul ul,
+    ol ol {
+      padding-left: em($d-gut, $d-medium-size);
+    }
+
+    li li {
+      font-size: 1em;
+    }
+
+    dt {
+      padding-right: em($d-gut/2, $d-medium-size);
+    }
+
+    code {
+      @include font-size($d-small-size, $d-medium-line);
+    }
+
+    // Grouping content
+
+    blockquote {
+      margin-bottom: em($d-medium-line/2);
+    }
+
+    pre {
+      //margin-top: em($d-medium-line/2, $d-medium-size);
+      //margin-bottom: em($d-medium-line/2, $d-medium-size);
+      padding-top: em($d-medium-line/2, $d-medium-size);
+      padding-right: em($d-gut, $d-medium-size);
+      padding-bottom: em($d-medium-line/2, $d-medium-size);
+      padding-left: em($d-gut, $d-medium-size);
+    }
+
+    hr {
+      margin-top: em($d-medium-line);
+      margin-bottom: em($d-medium-line);
+    }
+
+    // Embedded content
+
+    img {
+      margin-bottom: em($d-medium-line/2, $d-tiny-size);
+
+      @include font-size($d-tiny-size, $d-tiny-line);
+    }
+
+    .toc {
+      &:before {
+        left: 0;
+      }
+    }
+
+    [role="doc-noteref"] {
+      scroll-margin-top: $d-scroll-offset*2;
+    }
+
+    [role="doc-endnote"] {
+      scroll-margin-top: em($d-scroll-offset*2, $d-medium-size);
+    }
+  }
+  @include min-screen(col(12)) {
+    // Text-level semantics
+
+    dt,
+    li:before {
+      width: col(4, $d-medium-size);
+      margin-left: col(-4, $d-medium-size);
+      padding-right: em($d-gut/4*3, $d-medium-size);
+    }
+
+    ul,
+    ol {
+      padding-left: 0;
+    }
+
+    .toc {
+      &:before {
+        left: em(-$d-gut);
+      }
+    }
+  }
+}

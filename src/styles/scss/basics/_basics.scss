@@ -1,0 +1,321 @@
+/* Copyright (c) 2017 Andrea Buran [www.andreaburan.com]. All rights reserved */
+
+/*
+** Selection
+*/
+
+img::-moz-selection {
+  background-color: transparent;
+}
+img::selection {
+  background-color: transparent;
+}
+
+/*
+** Focus
+*/
+
+::focus {
+  @include no-focus;
+}
+
+:focus-visible {
+  @include focus;
+}
+
+/*
+** Basics
+*/
+
+html {
+  font-size: 100% * $base-font-size / $browser-default-font-size;
+
+  box-sizing: border-box;
+  height: 100%;
+
+  @include face(sans); // normalize.css
+  @include font-size($base-font-size, $base-font-line);
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%; // normalize.css
+      -ms-text-size-adjust: 100%; // normalize.css
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+
+  //transition-property: background-color, color, border-color;
+  //transition-duration: $duration, $duration, $duration;
+  //transition-timing-function: ease-out, ease-out, ease-out;
+}
+
+body {
+  font-weight: $normal;
+  height: 100%;
+  margin: 0; // normalize.css
+
+  counter-reset: footnotes images ordered-list;
+}
+
+/*
+** HTML5
+*/
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block; // normalize.css
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block; // normalize.css
+
+  vertical-align: baseline; // normalize.css
+}
+
+audio:not([controls]) {
+  display: none; // normalize.css
+
+  height: 0; // normalize.css
+}
+
+[hidden],
+template {
+  display: none; // normalize.css
+}
+
+/*
+** Links
+*/
+
+a {
+  text-decoration: none;
+  background-color: transparent; // normalize.css
+
+  transition-property: color;
+  transition-timing-function: ease-out;
+  color: inherit;
+  &:hover {
+    outline: 0; // normalize.css
+    transition-duration: $duration;
+  }
+  &:active {
+    outline: 0; // normalize.css
+    transition-duration: 0.0s;
+  }
+  &:focus {
+    outline: 0;
+  }
+  &:focus-visible {
+    @include focus;
+  }
+}
+/*a[href^="mailto"] {
+  word-break: break-all;
+}*/
+
+/*
+** Text-level semantics
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1em; // normalize.css
+
+  margin: 0;
+  font-weight: $normal;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+dl {
+  margin: 0;
+  dt {
+    font-style: italic;
+  }
+  dd {
+    margin: 0;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+abbr[title] {
+  text-decoration: none;
+  border-bottom: $border-width dotted; // normalize.css
+}
+
+strong {
+  font-weight: $medium; // normalize.css
+}
+
+q {
+  font-style: italic;
+  &:before {
+    content: "“";
+  }
+  &:after {
+    content: "”";
+  }
+}
+
+dfn {
+  font-style: italic; // normalize.css
+}
+
+small {
+  font-size: 0.8em; // normalize.css
+}
+
+sub,
+sup {
+  font-size: 0.8em; // normalize.css
+  line-height: 0; // normalize.css
+
+  position: relative; // normalize.css
+
+  vertical-align: baseline; // normalize.css
+}
+
+sup {
+  top: -0.5em; // normalize.css
+
+  //margin-left: 0.2em;
+}
+
+sub {
+  bottom: -0.25em; // normalize.css
+}
+
+/*
+** Grouping content
+*/
+
+blockquote {
+  font-style: italic;
+  margin: 0;
+  em {
+    font-style: normal;
+  }
+  cite {
+    font-style: normal;
+    em {
+      font-style: italic;
+    }
+  }
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace; // normalize.css
+  font-size: 1em; // normalize.css
+}
+code,
+samp,
+kbd {
+  @include face(mono);
+}
+code,
+kbd,
+mark {
+  padding: 0.1em 0.2em;
+  border-radius: 4px 4px;
+}
+pre {
+  display: block;
+  overflow: auto; // normalize.css
+
+  white-space: normal;
+  border-radius: 4px 4px;
+  code {
+    display: block;
+    padding: 0;
+    white-space: pre;
+  }
+}
+pre,
+code {
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-wrap: normal;
+  word-break: normal;
+  -moz-tab-size: 4;
+    -o-tab-size: 4;
+       tab-size: 4;
+  -webkit-hyphens: none;
+     -moz-hyphens: none;
+          hyphens: none;
+
+      -ms-hyphens: none;
+}
+
+hr {
+  display: block;
+  width: 100%;
+  height: $border-width;
+  padding: 0;
+  border: 0;
+  border-top-width: $border-width;
+  border-top-style: solid;
+}
+
+/*
+** Embedded content
+*/
+
+img,
+iframe {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  font-weight: $normal;
+  text-align: center;
+  -ms-interpolation-mode: bicubic;
+  border-style: none; // normalize.css
+
+  image-rendering: high-quality;
+}
+
+svg:not(:root) {
+  overflow: hidden; // normalize.css
+}
+
+audio,
+canvas,
+img,
+svg,
+video {
+  vertical-align: middle;
+}

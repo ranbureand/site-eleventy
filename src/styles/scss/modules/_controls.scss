@@ -1,0 +1,171 @@
+/* Copyright (c) 2017 Andrea Buran [www.andreaburan.com]. All rights reserved */
+
+/*
+** Controls
+*/
+
+.controls-jots-home {
+  .controls-item {
+    align-self: auto;
+  }
+}
+
+.controls-posts,
+.controls-jots {
+  .controls-item {
+    width: 100/8*1%;
+  }
+  @include min-screen(col(8)) {
+    .controls-item {
+      width: 100/8*1%;
+    }
+  }
+  @include min-screen(col(12)) {
+    .controls-item {
+      width: 100/16*1%;
+    }
+  }
+}
+
+.controls-projects {
+  .controls-item {
+    width: 100/2*1%;
+  }
+  @include min-screen(col(8)) {
+    .controls-item {
+      width: 100/2*1%;
+    }
+  }
+  @include max-screen(col(12)) {
+    .controls-item {
+      &:nth-child(2n+1) {
+        a {
+          &:before {
+            content: none;
+          }
+        }
+      }
+    }
+  }
+  @include min-screen(col(12)) {
+    .controls-item {
+      width: 100/4*1%;
+    }
+  }
+  @include screen(col(12), col(16)) {
+    .controls-item {
+      &:nth-child(4n+1) {
+        a {
+          &:before {
+            content: none;
+          }
+        }
+      }
+    }
+  }
+  @include min-screen(col(16)) {
+    .controls-item {
+      width: 100/6*1%;
+      &:nth-child(6n+1) {
+        a {
+          &:before {
+            content: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.controls-item {
+  text-align: center;
+
+  @include font-size($m-large-size, $m-large-line);
+
+  a,
+  span {
+    font-weight: $normal;
+
+    position: relative;
+
+    display: block;
+
+    padding: em($m-large-line/2, $m-large-size) em($m-gut/2, $m-large-size);
+
+    &:before {
+      position: absolute;
+      top: em($m-large-line/2, $m-large-size);
+      left: 0;
+
+      display: block;
+
+      height: em($m-large-line, $m-large-size);
+
+      content: "";
+
+      border-left-width: $border-width;
+      border-left-style: solid;
+    }
+  }
+  &:first-child {
+    a,
+    span {
+      &:before {
+        content: none;
+      }
+    }
+  }
+  @include min-screen(col(8)) {
+    @include font-size($d-large-size, $d-large-line);
+
+    a,
+    span {
+      padding: em($d-large-line/2, $d-large-size) em($d-gut/2, $d-large-size);
+
+      &:before {
+        top: em($d-large-line/2, $d-large-size);
+
+        height: em($d-large-line, $d-large-size);
+      }
+    }
+  }
+  @include min-screen(col(12)) {
+    padding-right: em($d-gut/2, $d-small-size);
+    padding-right: 0;
+    padding-left: em($d-gut/2, $d-small-size);
+    padding-left: 0;
+
+    @include font-size($d-small-size, $d-small-line);
+
+    a,
+    span {
+      padding: em($d-small-line/2, $d-small-size) em($d-gut, $d-small-size);
+
+      &:before {
+        top: em($d-small-line/2, $d-small-size);
+
+        height: em($d-small-line, $d-small-size);
+      }
+    }
+  }
+}
+
+.controls-item.current {
+  a,
+  span {
+    cursor: default;
+  }
+}
+
+/*
+** Colors
+*/
+
+.controls-item {
+  a,
+  span {
+    &:before {
+      border-left-color: var(--border-color);
+    }
+  }
+}

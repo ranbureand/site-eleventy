@@ -1,0 +1,64 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+      <loc>{{ site.url }}/</loc>
+      <lastmod>{{ buildTime | date_to_xmlschema }}</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.3</priority>
+    </url>
+  {%- for p in collections.postsListing %}
+    <url>
+      <loc>{{ site.url }}{{ p.url }}</loc>
+      <lastmod>{{ buildTime | date_to_xmlschema }}</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.3</priority>
+    </url>
+  {%- endfor %}
+  {%- for p in collections.jotsListing %}
+    <url>
+      <loc>{{ site.url }}{{ p.url }}</loc>
+      <lastmod>{{ buildTime | date_to_xmlschema }}</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.3</priority>
+    </url>
+  {%- endfor %}
+  {%- assign cats = collections.categories | sort: "url" %}
+  {%- for category in cats %}
+    <url>
+      <loc>{{ site.url }}{{ category.url }}</loc>
+      {%- if category.date %}
+      <lastmod>{{ category.date | date_to_xmlschema }}</lastmod>
+      {%- else %}
+      <lastmod>{{ buildTime | date_to_xmlschema }}</lastmod>
+      {%- endif %}
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+    </url>
+  {%- endfor %}
+  {%- assign projects = collections.projects | reverse %}
+  {%- for project in projects %}
+    {%- unless project.data.sitemap.excluded == true %}
+    <url>
+      <loc>{{ site.url }}{{ project.url }}</loc>
+      <lastmod>{{ project.date | date_to_xmlschema }}</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    {%- endunless %}
+  {%- endfor %}
+  {%- assign posts = collections.posts | reverse %}
+  {%- for post in posts %}
+    {%- unless post.data.sitemap.excluded == true %}
+    <url>
+      <loc>{{ site.url }}{{ post.url }}</loc>
+      <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    {%- endunless %}
+  {%- endfor %}
+</urlset>
