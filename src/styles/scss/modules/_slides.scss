@@ -14,14 +14,11 @@
 
 .slide {
   position: absolute;
-  z-index: 1;
   top: 0;
   left: 0;
 
   width: 100%;
   height: 100%;
-
-  transition: opacity 0.2s ease-in-out;
 
   opacity: 0;
 
@@ -29,11 +26,9 @@
 }
 
 .slide.current {
-  z-index: 2;  // The "current" slide
-  opacity: 1;  // Fully visible
+  opacity: 1;
 }
 
-.slide.next {
-  z-index: 3;  // Always above the .active slide
-  opacity: 0;  // Will transition to opacity: 1
+.slide.incoming {
+  z-index: 1;
 }
