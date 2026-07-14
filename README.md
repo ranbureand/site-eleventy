@@ -37,6 +37,12 @@ Run the following commands in the Terminal:
 
     npm run build
 
+## Scripts
+
+The JavaScript lives as separate source files in `src/scripts/js/`. The build concatenates them in the order defined by the `build:js` script in `package.json`, and minifies them into a single `main.min.js` with [terser](https://terser.org/): the only script the site loads.
+
+To rebuild only the scripts, run `npm run build:js` on its own. To change the scripts, edit the source files, or add a new one to the `build:js` list, and then rebuild.
+
 ## Eleventy variables
 
 ```
