@@ -21,8 +21,8 @@
 
     -->
 
-    <title>{%- if title %}{{ title | markdownify | strip_html | escape | strip }} · {% endif %}{{ site.title | escape }}</title>
-    <meta name="description" content="{% if description %}{{ description | markdownify | strip_html | escape | strip }}{% else %}{{ site.description | escape }}{% endif %}">
+    <title>{%- if title %}{{ title | markdownify | strip_html | escape_once | strip }} · {% endif %}{{ site.title | escape }}</title>
+    <meta name="description" content="{% if description %}{{ description | markdownify | strip_html | escape_once | strip }}{% else %}{{ site.description | escape }}{% endif %}">
 
     <!-- https://fonts.google.com/share?selection.family=IBM%20Plex%20Mono:ital,wght@0,400;0,500;1,400;1,500%7CIBM%20Plex%20Sans:ital,wght@0,400;0,500;1,400;1,500%7CIBM%20Plex%20Serif:ital,wght@0,400;0,500;1,400;1,500 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

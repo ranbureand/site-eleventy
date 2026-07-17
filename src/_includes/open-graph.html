@@ -2,15 +2,15 @@
     <!-- Open Graph protocol -->
     <meta property="og:title" content="
       {%- if title %}
-        {{- title | markdownify | strip_html | escape | strip }} · {{ site.title | escape }}
+        {{- title | markdownify | strip_html | escape_once | strip }} · {{ site.title | escape }}
       {%- else %}
         {{- site.title | escape }}
       {%- endif %}">
     <meta property="og:description" content="
       {%- if excerpt %}
-        {{- excerpt | markdownify | strip_html | escape | strip }}
+        {{- excerpt | markdownify | strip_html | escape_once | strip }}
       {%- elsif description %}
-        {{- description | markdownify | strip_html | escape | strip }}
+        {{- description | markdownify | strip_html | escape_once | strip }}
       {%- else %}
         {{- site.description | escape }}
       {%- endif %}">
