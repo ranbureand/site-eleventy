@@ -7,6 +7,7 @@
     "clean": "rm -rf _site",
     "build:css": "sass src/styles/scss/main.scss:src/styles/css/main.css src/colors/styles/scss/main.scss:src/colors/styles/css/main.min.css --style=compressed --no-source-map --quiet-deps",
     "build:js": "terser src/scripts/js/sticky-header.js src/scripts/js/mode.js src/scripts/js/formations.js src/scripts/js/anchored-headings.js src/scripts/js/emails.js src/scripts/js/slides.js src/scripts/js/video-embeds.js src/scripts/js/footnotes.js src/scripts/js/main.js --compress --mangle --output src/scripts/js/main.min.js",
+    "build:images": "node lib/build-images.js",
     "build": "npm run build:css && npm run build:js && eleventy",
     "start": "npm run build:css && npm run build:js && (sass src/styles/scss/main.scss:src/styles/css/main.css src/colors/styles/scss/main.scss:src/colors/styles/css/main.min.css --style=compressed --no-source-map --quiet-deps --watch & eleventy --serve)"
   },
@@ -33,6 +34,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.1.6",
     "sass": "^1.80.0",
+    "sharp": "^0.35.3",
     "terser": "^5.49.0"
   }
 }
