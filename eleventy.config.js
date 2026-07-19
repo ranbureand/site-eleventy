@@ -221,10 +221,9 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/scripts/js/main.min.js": "scripts/js/main.min.js" });
   eleventyConfig.addPassthroughCopy("src/media");
   eleventyConfig.addPassthroughCopy("src/styles/css");
-  eleventyConfig.addPassthroughCopy("src/colors");
-  // colors/index.html is a self-contained, pre-built page; copy it verbatim
-  // rather than letting Eleventy process it as a template.
-  eleventyConfig.ignores.add("src/colors/index.html");
+  // src/colors/ is a local-only swatch reference; it is not published
+  // (the Jekyll site never shipped it either).
+  eleventyConfig.ignores.add("src/colors/**");
   eleventyConfig.addPassthroughCopy({ "src/root": "/" });
 
   // Sass writes into src/styles/css and src/colors/styles/css; do not let
