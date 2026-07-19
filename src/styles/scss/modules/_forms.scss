@@ -282,7 +282,7 @@ optgroup {
 
       width: col(4, $d-medium-size);
       margin-top: em($d-medium-line*math.div(1, 4), $d-medium-size);
-      margin-left: em(-$column-width*4 -$d-gut, $d-medium-size);
+      margin-left: em(-$column-width*4-$d-gut, $d-medium-size);
 
       text-align: right;
     }
