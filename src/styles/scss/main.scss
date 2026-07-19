@@ -4,11 +4,6 @@
 ** Utilities
 */
 
-@use "utilities/colors";
-@use "utilities/variables";
-@use "utilities/functions";
-@use "utilities/mixins";
-@use "utilities/media-queries";
 @use "utilities/fonts";
 @use "utilities/helpers";
 @use "utilities/animations";
@@ -17,7 +12,7 @@
 ** Basics
 */
 
-@use "basics/colors" as basics-colors;
+@use "basics/colors";
 @use "basics/basics";
 @use "basics/layout-2d";
 @use "basics/layout-1d";
