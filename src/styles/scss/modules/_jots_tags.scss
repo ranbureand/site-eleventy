@@ -4,24 +4,26 @@
 ** Jots tags
 */
 
+@use "sass:math";
+
 .tags {
-  margin-top: em(-$m-large-line/2);
-  margin-bottom: em(-$m-large-line/2);
+  margin-top: em(-$m-large-line*math.div(1, 2));
+  margin-bottom: em(-$m-large-line*math.div(1, 2));
 
   @include min-screen(col(8)) {
-    margin-top: em(-$d-large-line/2);
-    margin-bottom: em(-$d-large-line/2);
+    margin-top: em(-$d-large-line*math.div(1, 2));
+    margin-bottom: em(-$d-large-line*math.div(1, 2));
   }
   @include min-screen(col(12)) {
-    margin-top: em(-$d-small-line/2);
-    margin-bottom: em(-$d-small-line/2);
+    margin-top: em(-$d-small-line*math.div(1, 2));
+    margin-bottom: em(-$d-small-line*math.div(1, 2));
   }
 }
 
 .tags .tag {
   position: relative;
 
-  width: 100/1*1%;
+  width: math.div(100, 1)*1%;
 
   counter-increment: tag;
 
@@ -29,10 +31,10 @@
   &:before {
     float: left;
 
-    min-width: em($m-small-line/2*3, $m-small-size);
-    height: em($m-small-line/2*3, $m-small-size);
-    margin-top: em($m-small-line/4, $m-small-size);
-    margin-right: em($m-gut/2, $m-small-size);
+    min-width: em($m-small-line*math.div(3, 2), $m-small-size);
+    height: em($m-small-line*math.div(3, 2), $m-small-size);
+    margin-top: em($m-small-line*math.div(1, 4), $m-small-size);
+    margin-right: em($m-gut*math.div(1, 2), $m-small-size);
 
     content: counter(tag);
     transition-timing-function: ease-out;
@@ -41,7 +43,7 @@
 
     border-radius: 50%;
 
-    @include font-size($m-small-size, $m-small-line/2*3, $m-small-size);
+    @include font-size($m-small-size, $m-small-line*math.div(3, 2), $m-small-size);
   }
   &:hover {
     &:before {
@@ -61,33 +63,33 @@
 
     display: block;
 
-    padding: em($m-small-line/2, $m-small-size) em($m-gut/2, $m-small-size);
+    padding: em($m-small-line*math.div(1, 2), $m-small-size) em($m-gut*math.div(1, 2), $m-small-size);
   }
   @include min-screen(col(8)) {
-    width: 100/2*1%;
+    width: math.div(100, 2)*1%;
 
     @include font-size($d-small-size, $d-small-line);
 
     &:before {
-      min-width: em($d-small-line/2*3, $d-small-size);
-      height: em($d-small-line/2*3, $d-small-size);
-      margin-top: em($d-small-line/4, $d-small-size);
-      margin-right: em($d-gut/2, $d-small-size);
+      min-width: em($d-small-line*math.div(3, 2), $d-small-size);
+      height: em($d-small-line*math.div(3, 2), $d-small-size);
+      margin-top: em($d-small-line*math.div(1, 4), $d-small-size);
+      margin-right: em($d-gut*math.div(1, 2), $d-small-size);
 
-      @include font-size($d-small-size, $d-small-line/2*3, $d-small-size);
+      @include font-size($d-small-size, $d-small-line*math.div(3, 2), $d-small-size);
     }
 
     a {
-      padding: em($d-small-line/2, $d-small-size) em($d-gut, $d-small-size);
+      padding: em($d-small-line*math.div(1, 2), $d-small-size) em($d-gut, $d-small-size);
     }
   }
   @include min-screen(col(12)) {
-    width: 100/3*1%;
-    padding-right: em($d-gut/2, $d-small-size);
-    padding-left: em($d-gut/2, $d-small-size);
+    width: math.div(100, 3)*1%;
+    padding-right: em($d-gut*math.div(1, 2), $d-small-size);
+    padding-left: em($d-gut*math.div(1, 2), $d-small-size);
   }
   @include min-screen(col(16)) {
-    width: 100/4*1%;
+    width: math.div(100, 4)*1%;
   }
 }
 

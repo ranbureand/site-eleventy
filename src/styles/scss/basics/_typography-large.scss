@@ -1,5 +1,7 @@
 /* Copyright (c) 2017 Andrea Buran [www.andreaburan.com]. All rights reserved */
 
+@use "sass:math";
+
 /*
 ** Typography => Large
 */
@@ -9,7 +11,7 @@
 
   h1,
   h2 {
-    margin-bottom: em($m-extra-large-line/2, $m-extra-large-size);
+    margin-bottom: em($m-extra-large-line*math.div(1, 2), $m-extra-large-size);
 
     @include font-size($m-extra-large-size, $m-extra-large-line);
   }
@@ -17,21 +19,21 @@
   h3,
   h4,
   p {
-    margin-bottom: em($m-large-line/2, $m-large-size);
+    margin-bottom: em($m-large-line*math.div(1, 2), $m-large-size);
 
     @include font-size($m-large-size, $m-large-line);
   }
 
   h5,
   h6 {
-    margin-bottom: em($m-medium-line/2, $m-medium-size);
+    margin-bottom: em($m-medium-line*math.div(1, 2), $m-medium-size);
 
     @include font-size($m-medium-size, $m-medium-line);
   }
 
   ul,
   ol {
-    margin-bottom: em($m-large-line/2);
+    margin-bottom: em($m-large-line*math.div(1, 2));
     padding-left: em($m-gut*2, $m-large-size);
   }
 
@@ -58,7 +60,7 @@
 
     h1,
     h2 {
-      margin-bottom: em($d-extra-large-line/2, $d-extra-large-size);
+      margin-bottom: em($d-extra-large-line*math.div(1, 2), $d-extra-large-size);
 
       @include font-size($d-extra-large-size, $d-extra-large-line);
     }
@@ -66,22 +68,22 @@
     h3,
     h4,
     p {
-      margin-bottom: em($d-large-line/2, $d-large-size);
+      margin-bottom: em($d-large-line*math.div(1, 2), $d-large-size);
 
       @include font-size($d-large-size, $d-large-line);
     }
 
     h5,
     h6 {
-      margin-bottom: em($d-medium-line/2, $d-medium-size);
+      margin-bottom: em($d-medium-line*math.div(1, 2), $d-medium-size);
 
       @include font-size($d-medium-size, $d-medium-line);
     }
 
     ul,
     ol {
-      margin-bottom: em($d-large-line/2);
-      padding-left: em($d-gut/2*3);
+      margin-bottom: em($d-large-line*math.div(1, 2));
+      padding-left: em($d-gut*math.div(3, 2));
     }
 
     li,
@@ -90,8 +92,8 @@
     }
 
     li:before {
-      width: em($d-gut/2*3, $d-large-size);
-      margin-left: em(-$d-gut/2*3, $d-large-size);
+      width: em($d-gut*math.div(3, 2), $d-large-size);
+      margin-left: em(-$d-gut*math.div(3, 2), $d-large-size);
     }
 
     ul ul,

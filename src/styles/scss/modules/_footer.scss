@@ -4,6 +4,8 @@
 ** Footer
 */
 
+@use "sass:math";
+
 .footer {
   opacity: 1;
 
@@ -14,7 +16,7 @@
 
 .footer {
   padding-top: em($m-base-rhythm*6);
-  padding-bottom: em($m-base-rhythm/6*5);
+  padding-bottom: em($m-base-rhythm*math.div(5, 6));
 
   @include min-screen(col(8)) {
     padding-top: em($d-base-rhythm*3);

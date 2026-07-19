@@ -1,5 +1,7 @@
 /* Copyright (c) 2017 Andrea Buran [www.andreaburan.com]. All rights reserved */
 
+@use "sass:math";
+
 /*
 ** Tables
 */
@@ -20,10 +22,10 @@ table {
 
   th,
   td {
-    padding-top: em($m-small-line*3/8, $m-small-size);
-    padding-right: em($m-gut*3/4, $m-small-size);
-    padding-bottom: em($m-small-line*3/8, $m-small-size);
-    padding-left: em($m-gut*3/4, $m-small-size);
+    padding-top: em($m-small-line*math.div(3, 8), $m-small-size);
+    padding-right: em($m-gut*math.div(3, 4), $m-small-size);
+    padding-bottom: em($m-small-line*math.div(3, 8), $m-small-size);
+    padding-left: em($m-gut*math.div(3, 4), $m-small-size);
 
     text-align: left;
 
@@ -67,10 +69,10 @@ table {
 
     th,
     td {
-      padding-top: em($d-small-line*3/8, $d-small-size);
-      padding-right: em($d-gut/2, $d-medium-size);
-      padding-bottom: em($d-small-line*3/8, $d-small-size);
-      padding-left: em($d-gut/2, $d-medium-size);
+      padding-top: em($d-small-line*math.div(3, 8), $d-small-size);
+      padding-right: em($d-gut*math.div(1, 2), $d-medium-size);
+      padding-bottom: em($d-small-line*math.div(3, 8), $d-small-size);
+      padding-left: em($d-gut*math.div(1, 2), $d-medium-size);
 
       @include font-size($d-small-size, $d-small-line);
       &:first-child {

@@ -4,14 +4,16 @@
 ** Previews
 */
 
+@use "sass:math";
+
 .posts-items {
   padding-top: em($m-base-rhythm);
 
   > li {
-    width: 100/1*1%;
+    width: math.div(100, 1)*1%;
     margin-bottom: em($m-base-rhythm*2);
     padding-right: em($m-gut);
-    padding-left: em($m-gut/2*5);
+    padding-left: em($m-gut*math.div(5, 2));
 
     opacity: 1;
 
@@ -22,20 +24,20 @@
 
     > li {
       margin-bottom: em($d-base-rhythm*2);
-      padding-right: em($d-gut/2);
+      padding-right: em($d-gut*math.div(1, 2));
       padding-left: em($d-gut*2);
     }
   }
   @include min-screen(col(12)) {
     > li {
-      width: 100/2*1%;
+      width: math.div(100, 2)*1%;
     }
   }
 }
 
 @for $i from 0 through 24 {
   .posts-items > li:nth-child(#{$i + 1}n) {
-    animation-delay: #{$i * $duration/16 };
+    animation-delay: #{$i * math.div($duration, 16)};
   }
 }
 
@@ -59,7 +61,7 @@
   .posts-item-title {
     font-weight: $normal;
 
-    margin-top: em($m-small-line/2, $m-large-size);
+    margin-top: em($m-small-line*math.div(1, 2), $m-large-size);
 
     transition-timing-function: ease-in-out;
     transition-property: color;
@@ -74,14 +76,14 @@
   .posts-item-tags {
     font-style: italic;
 
-    margin-top: em($m-tiny-line/4, $m-tiny-size);
+    margin-top: em($m-tiny-line*math.div(1, 4), $m-tiny-size);
 
     @include face(serif);
     @include font-size($m-tiny-size, $m-tiny-line);
   }
 
   .posts-item-date {
-    margin-top: em($m-small-line/4, $m-small-size);
+    margin-top: em($m-small-line*math.div(1, 4), $m-small-size);
 
     @include face(mono);
     @include font-size($m-small-size, $m-small-line);
@@ -100,26 +102,26 @@
   }
   @include min-screen(col(8)) {
     .posts-item-excerpt {
-      margin-left: em(-$d-gut/2*3, $d-large-size);
-      padding-left: em($d-gut/2*3 - $border-width, $d-large-size);
+      margin-left: em(-$d-gut*math.div(3, 2), $d-large-size);
+      padding-left: em($d-gut*math.div(3, 2) - $border-width, $d-large-size);
 
       @include font-size($d-large-size, $d-large-line);
     }
 
     .posts-item-title {
-      margin-top: em($d-large-line/2, $d-large-size);
+      margin-top: em($d-large-line*math.div(1, 2), $d-large-size);
 
       @include font-size($d-large-size, $d-large-line);
     }
 
     .posts-item-tags {
-      margin-top: em($d-small-line/4, $d-small-size);
+      margin-top: em($d-small-line*math.div(1, 4), $d-small-size);
 
       @include font-size($d-small-size, $d-small-line);
     }
 
     .posts-item-date {
-      margin-top: em($d-small-line/4, $d-small-size);
+      margin-top: em($d-small-line*math.div(1, 4), $d-small-size);
 
       @include font-size($d-small-size, $d-small-line);
     }

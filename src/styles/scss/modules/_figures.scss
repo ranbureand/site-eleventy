@@ -4,12 +4,14 @@
 ** Figures
 */
 
+@use "sass:math";
+
 .figures {
   display: flex;
 
   margin-top: em($m-base-rhythm);
-  margin-right: em(-$m-gut/2);
-  margin-left: em(-$m-gut/2);
+  margin-right: em(-$m-gut*math.div(1, 2));
+  margin-left: em(-$m-gut*math.div(1, 2));
 
   align-content: flex-start;
   align-items: flex-start;
@@ -18,18 +20,18 @@
   @include min-screen(col(8)) {
     //width: col(8);
     margin-top: em($d-base-rhythm);
-    margin-right: em(-$d-gut/2);
-    margin-left: em(-$d-gut/2);
+    margin-right: em(-$d-gut*math.div(1, 2));
+    margin-left: em(-$d-gut*math.div(1, 2));
   }
   @include min-screen(col(12)) {
     width: col(12);
-    margin-left: em(-$column-width*4-$d-gut/2);
+    margin-left: em(-$column-width*4-$d-gut*math.div(1, 2));
 
     justify-content: flex-end;
   }
   @include min-screen(col(16)) {
     width: col(16);
-    margin-left: em(-$column-width*8-$d-gut/2);
+    margin-left: em(-$column-width*8-$d-gut*math.div(1, 2));
   }
 }
 
@@ -66,14 +68,14 @@ div {
   position: relative;
 
   margin: 0 0 em($m-base-rhythm) 0;
-  padding-right: em($m-gut*0.5);
-  padding-left: em($m-gut*0.5);
+  padding-right: em($m-gut*math.div(1, 2));
+  padding-left: em($m-gut*math.div(1, 2));
 
   counter-increment: images;
 
   figcaption {
     width: 100%;
-    margin-top: em($m-small-line*3/8);
+    margin-top: em($m-small-line*math.div(3, 8));
 
     > p:first-child:before {
       font-style: italic;
@@ -88,11 +90,11 @@ div {
   }
   @include min-screen(col(8)) {
     margin: 0 0 em($d-base-rhythm) 0;
-    padding-right: em($d-gut*0.5);
-    padding-left: em($d-gut*0.5);
+    padding-right: em($d-gut*math.div(1, 2));
+    padding-left: em($d-gut*math.div(1, 2));
 
     figcaption {
-      margin-top: em($d-small-line/2);
+      margin-top: em($d-small-line*math.div(1, 2));
 
       > p:first-child:before {
         content: "fig. " counter(images) "\0000a0\0000a0\0000a0";
@@ -160,7 +162,7 @@ div {
         position: relative;
         z-index: 10;
 
-        padding: em($m-small-line/2, $m-small-size) em($m-gut/2*3, $m-small-size);
+        padding: em($m-small-line*math.div(1, 2), $m-small-size) em($m-gut*math.div(3, 2), $m-small-size);
 
         @include font-size($m-small-size, $m-small-line);
         @include face(sans);
@@ -194,7 +196,7 @@ div {
         border-radius: em($d-small-line);
 
         div {
-          padding: em($d-small-line/2, $d-small-size) em($d-gut, $d-small-size);
+          padding: em($d-small-line*math.div(1, 2), $d-small-size) em($d-gut, $d-small-size);
 
           @include font-size($d-small-size, $d-small-line);
         }
@@ -234,13 +236,13 @@ div {
   }
   .play,
   .mute {
-    bottom: em($m-medium-line/2);
+    bottom: em($m-medium-line*math.div(1, 2));
   }
   .play {
-    left: em($m-medium-line/2);
+    left: em($m-medium-line*math.div(1, 2));
   }
   .mute {
-    right: em($m-medium-line/2);
+    right: em($m-medium-line*math.div(1, 2));
   }
   .played {
     background-image: url("../../media/icons/ic_pause.svg");
@@ -263,13 +265,13 @@ div {
     }
     .play,
     .mute {
-      bottom: em($d-medium-line/2);
+      bottom: em($d-medium-line*math.div(1, 2));
     }
     .play {
-      left: em($d-medium-line/2);
+      left: em($d-medium-line*math.div(1, 2));
     }
     .mute {
-      right: em($d-medium-line/2);
+      right: em($d-medium-line*math.div(1, 2));
     }
   }
 }
@@ -300,10 +302,10 @@ div {
   width: 100%;
 
   @include min-screen(col(12)) {
-    width: 100%*16/24;
+    width: 100%*math.div(16, 24);
   }
   @include min-screen(col(16)) {
-    width: 100%*12/24;
+    width: 100%*math.div(12, 24);
   }
 }
 
@@ -312,11 +314,11 @@ div {
 .video-embed-sm {
   width: 100%;
 
-  @include min-screen(480/16*1em) {
-    width: 100%*12/24;
+  @include min-screen(math.div(480, 16)*1em) {
+    width: 100%*math.div(12, 24);
   }
   @include min-screen(col(12)) {
-    width: 100%*8/24;
+    width: 100%*math.div(8, 24);
   }
 }
 
@@ -326,7 +328,7 @@ div {
   width: 100%;
 
   @include min-screen(col(6)) {
-    width: 100%*2/4;
+    width: 100%*math.div(2, 4);
   }
   @include min-screen(col(8)) {
     width: col(4);
@@ -336,10 +338,10 @@ div {
 .image-xs,
 .video-link-xs,
 .video-embed-xs {
-  width: 100%*2/4;
+  width: 100%*math.div(2, 4);
 
-  @include min-screen(480/16*1em) {
-    width: 100%*1/4;
+  @include min-screen(math.div(480, 16)*1em) {
+    width: 100%*math.div(1, 4);
   }
   @include min-screen(col(8)) {
     width: col(2);

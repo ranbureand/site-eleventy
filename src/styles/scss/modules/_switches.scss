@@ -1,5 +1,7 @@
 /* Copyright (c) 2017 Andrea Buran [www.andreaburan.com]. All rights reserved */
 
+@use "sass:math";
+
 /*
 ** Switches
 */
@@ -12,12 +14,12 @@
 
   width: em($base-unit*10, $m-small-size);
   height: em($base-unit*5, $m-small-size);
-  margin-top: em($base-unit/2, $m-small-size);
+  margin-top: em($base-unit*math.div(1, 2), $m-small-size);
 
   @include min-screen(col(8)) {
     width: em($base-unit*10, $d-small-size);
     height: em($base-unit*5, $d-small-size);
-    margin-top: em($base-unit/2, $d-small-size);
+    margin-top: em($base-unit*math.div(1, 2), $d-small-size);
   }
 }
 
@@ -33,12 +35,12 @@
   transition-timing-function: ease-out;
   transition-property: background-color;
 
-  border-radius: em($m-small-line/2, $m-small-size);
+  border-radius: em($m-small-line*math.div(1, 2), $m-small-size);
 
   &:before {
     position: absolute;
-    bottom: em($base-unit/2, $m-small-size);
-    left: em($base-unit/2, $m-small-size);
+    bottom: em($base-unit*math.div(1, 2), $m-small-size);
+    left: em($base-unit*math.div(1, 2), $m-small-size);
 
     width: em($base-unit*4, $m-small-size);
     height: em($base-unit*4, $m-small-size);
@@ -51,11 +53,11 @@
     border-radius: 50%;
   }
   @include min-screen(col(8)) {
-    border-radius: em($d-small-line/2, $d-small-size);
+    border-radius: em($d-small-line*math.div(1, 2), $d-small-size);
 
     &:before {
-      bottom: em($base-unit/2, $d-small-size);
-      left: em($base-unit/2, $d-small-size);
+      bottom: em($base-unit*math.div(1, 2), $d-small-size);
+      left: em($base-unit*math.div(1, 2), $d-small-size);
 
       width: em($base-unit*4, $d-small-size);
       height: em($base-unit*4, $d-small-size);

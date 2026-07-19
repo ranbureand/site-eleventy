@@ -1,5 +1,7 @@
 /* Copyright (c) 2017 Andrea Buran [www.andreaburan.com]. All rights reserved */
 
+@use "sass:math";
+
 /*
 ** Grid
 **
@@ -22,16 +24,16 @@
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-  padding-right: em($m-gut/2);
-  padding-left: em($m-gut/2);
+  padding-right: em($m-gut*math.div(1, 2));
+  padding-left: em($m-gut*math.div(1, 2));
 
   grid-column-gap: em($m-gut);
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
   @include min-screen(col(8)) {
     //width: col(8);
-    padding-right: em($d-gut/2);
-    padding-left: em($d-gut/2);
+    padding-right: em($d-gut*math.div(1, 2));
+    padding-left: em($d-gut*math.div(1, 2));
 
     grid-column-gap: em($d-gut);
     grid-template-columns: repeat(4, 1fr);
@@ -76,7 +78,7 @@
 
 .base-stalagmite header[class*="column-2d-l"] {
   @include min-screen(col(8)) {
-    margin-top: em($d-base-rhythm/2*4);
+    margin-top: em($d-base-rhythm*math.div(2, 1));
   }
 }
 
@@ -184,7 +186,7 @@
 
 [class*="column-2d-s"] {
   @include min-screen(col(8)) {
-    margin-top: em($d-base-rhythm/2);
+    margin-top: em($d-base-rhythm*math.div(1, 2));
   }
 }
 

@@ -1,5 +1,7 @@
 /* Copyright (c) 2017 Andrea Buran [www.andreaburan.com]. All rights reserved */
 
+@use "sass:math";
+
 /*
 ** Typefaces
 */
@@ -63,8 +65,8 @@
 @mixin focus {
   z-index: 1000;
 
-  border-radius: $base-unit/4*3;
-  outline-width: $base-unit/4*3;
+  border-radius: $base-unit*math.div(3, 4);
+  outline-width: $base-unit*math.div(3, 4);
   outline-style: solid;
   outline-color: var(--focused-border-color);
   outline-offset: $base-unit;

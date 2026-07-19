@@ -4,6 +4,8 @@
 ** Controls
 */
 
+@use "sass:math";
+
 .controls-jots-home {
   .controls-item {
     align-self: auto;
@@ -13,27 +15,27 @@
 .controls-posts,
 .controls-jots {
   .controls-item {
-    width: 100/8*1%;
+    width: math.div(100, 8)*1%;
   }
   @include min-screen(col(8)) {
     .controls-item {
-      width: 100/8*1%;
+      width: math.div(100, 8)*1%;
     }
   }
   @include min-screen(col(12)) {
     .controls-item {
-      width: 100/16*1%;
+      width: math.div(100, 16)*1%;
     }
   }
 }
 
 .controls-projects {
   .controls-item {
-    width: 100/2*1%;
+    width: math.div(100, 2)*1%;
   }
   @include min-screen(col(8)) {
     .controls-item {
-      width: 100/2*1%;
+      width: math.div(100, 2)*1%;
     }
   }
   @include max-screen(col(12)) {
@@ -49,7 +51,7 @@
   }
   @include min-screen(col(12)) {
     .controls-item {
-      width: 100/4*1%;
+      width: math.div(100, 4)*1%;
     }
   }
   @include screen(col(12), col(16)) {
@@ -65,7 +67,7 @@
   }
   @include min-screen(col(16)) {
     .controls-item {
-      width: 100/6*1%;
+      width: math.div(100, 6)*1%;
       &:nth-child(6n+1) {
         a {
           &:before {
@@ -90,11 +92,11 @@
 
     display: block;
 
-    padding: em($m-large-line/2, $m-large-size) em($m-gut/2, $m-large-size);
+    padding: em($m-large-line*math.div(1, 2), $m-large-size) em($m-gut*math.div(1, 2), $m-large-size);
 
     &:before {
       position: absolute;
-      top: em($m-large-line/2, $m-large-size);
+      top: em($m-large-line*math.div(1, 2), $m-large-size);
       left: 0;
 
       display: block;
@@ -120,29 +122,29 @@
 
     a,
     span {
-      padding: em($d-large-line/2, $d-large-size) em($d-gut/2, $d-large-size);
+      padding: em($d-large-line*math.div(1, 2), $d-large-size) em($d-gut*math.div(1, 2), $d-large-size);
 
       &:before {
-        top: em($d-large-line/2, $d-large-size);
+        top: em($d-large-line*math.div(1, 2), $d-large-size);
 
         height: em($d-large-line, $d-large-size);
       }
     }
   }
   @include min-screen(col(12)) {
-    padding-right: em($d-gut/2, $d-small-size);
+    padding-right: em($d-gut*math.div(1, 2), $d-small-size);
     padding-right: 0;
-    padding-left: em($d-gut/2, $d-small-size);
+    padding-left: em($d-gut*math.div(1, 2), $d-small-size);
     padding-left: 0;
 
     @include font-size($d-small-size, $d-small-line);
 
     a,
     span {
-      padding: em($d-small-line/2, $d-small-size) em($d-gut, $d-small-size);
+      padding: em($d-small-line*math.div(1, 2), $d-small-size) em($d-gut, $d-small-size);
 
       &:before {
-        top: em($d-small-line/2, $d-small-size);
+        top: em($d-small-line*math.div(1, 2), $d-small-size);
 
         height: em($d-small-line, $d-small-size);
       }

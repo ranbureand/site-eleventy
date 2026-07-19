@@ -4,6 +4,8 @@
 ** Selection
 */
 
+@use "sass:math";
+
 img::-moz-selection {
   background-color: transparent;
 }
@@ -28,7 +30,7 @@ img::selection {
 */
 
 html {
-  font-size: 100% * $base-font-size / $browser-default-font-size;
+  font-size: 100% * math.div($base-font-size, $browser-default-font-size);
 
   box-sizing: border-box;
   height: 100%;

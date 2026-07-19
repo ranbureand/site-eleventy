@@ -4,13 +4,15 @@
 ** Codes
 */
 
+@use "sass:math";
+
 [class*="code"] {
   display: flex;
 
   margin-top: em($m-base-rhythm);
-  margin-right: em(-$m-gut/2);
+  margin-right: em(-$m-gut*math.div(1, 2));
   margin-bottom: em($m-base-rhythm);
-  margin-left: em(-$m-gut/2);
+  margin-left: em(-$m-gut*math.div(1, 2));
 
   align-content: flex-start;
   align-items: flex-start;
@@ -19,41 +21,41 @@
 
   > .highlight {
     width: 100%;
-    padding-right: em($m-gut/2);
-    padding-left: em($m-gut/2);
+    padding-right: em($m-gut*math.div(1, 2));
+    padding-left: em($m-gut*math.div(1, 2));
   }
   @include min-screen(col(8)) {
     margin-top: em($d-base-rhythm);
-    margin-right: em(-$d-gut/2);
+    margin-right: em(-$d-gut*math.div(1, 2));
     margin-bottom: em($d-base-rhythm);
-    margin-left: em(-$d-gut/2);
+    margin-left: em(-$d-gut*math.div(1, 2));
 
     > .highlight {
-      padding-right: em($d-gut/2);
-      padding-left: em($d-gut/2);
+      padding-right: em($d-gut*math.div(1, 2));
+      padding-left: em($d-gut*math.div(1, 2));
     }
   }
   @include min-screen(col(12)) {
     width: col(12);
-    margin-left: em(-$column-width*4-$d-gut/2);
+    margin-left: em(-$column-width*4-$d-gut*math.div(1, 2));
 
     justify-content: flex-end;
   }
   @include min-screen(col(16)) {
     width: col(16);
-    margin-left: em(-$column-width*8-$d-gut/2);
+    margin-left: em(-$column-width*8-$d-gut*math.div(1, 2));
   }
 }
 
 .code-m {
   @include min-screen(col(12)) {
      > .highlight {
-      width: 100%*2/3;
+      width: 100%*math.div(2, 3);
     }
   }
   @include min-screen(col(16)) {
      > .highlight {
-      width: 100%*2/4;
+      width: 100%*math.div(2, 4);
     }
   }
 }
@@ -61,7 +63,7 @@
 .code-l {
   @include min-screen(col(16)) {
      > .highlight {
-      width: 100%*3/4;
+      width: 100%*math.div(3, 4);
     }
   }
 }

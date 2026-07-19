@@ -1,5 +1,7 @@
 /* Copyright (c) 2017 Andrea Buran [www.andreaburan.com]. All rights reserved */
 
+@use "sass:math";
+
 ::placeholder {
   opacity: 1.0;
 }
@@ -138,7 +140,7 @@ optgroup {
 
     display: block;
 
-    margin-bottom: em($m-medium-line/4, $m-medium-size);
+    margin-bottom: em($m-medium-line*math.div(1, 4), $m-medium-size);
 
     @include font-size($m-medium-size, $m-medium-line);
   }
@@ -154,10 +156,10 @@ optgroup {
   input[type = "text"],
   textarea {
     width: 100%;
-    padding-top: em($m-medium-line/4 + strip(-$field-border-width/10), $m-medium-size);
-    padding-right: em($m-gut/2, $m-medium-size);
-    padding-bottom: em($m-medium-line/4 + strip(-$field-border-width/10), $m-medium-size);
-    padding-left: em($m-gut/2, $m-medium-size);
+    padding-top: em($m-medium-line*math.div(1, 4) + strip(-$field-border-width*math.div(1, 10)), $m-medium-size);
+    padding-right: em($m-gut*math.div(1, 2), $m-medium-size);
+    padding-bottom: em($m-medium-line*math.div(1, 4) + strip(-$field-border-width*math.div(1, 10)), $m-medium-size);
+    padding-left: em($m-gut*math.div(1, 2), $m-medium-size);
 
     border-width: $field-border-width;
     border-style: solid;
@@ -181,7 +183,7 @@ optgroup {
 
     display: block;
 
-    margin-top: em($m-small-line/4, $m-small-size);
+    margin-top: em($m-small-line*math.div(1, 4), $m-small-size);
 
     @include font-size($m-small-size, $m-small-line);
 
@@ -196,9 +198,9 @@ optgroup {
     display: inline-block;
 
     height: em($m-medium-line*1.5, $m-medium-size);
-    padding-top: em($m-medium-line/4 + strip(-$button-border-width/10), $m-medium-size);
+    padding-top: em($m-medium-line*math.div(1, 4) + strip(-$button-border-width*math.div(1, 10)), $m-medium-size);
     padding-right: em($m-gut*3, $m-medium-size);
-    padding-bottom: em($m-medium-line/4 + strip(-$button-border-width/10), $m-medium-size);
+    padding-bottom: em($m-medium-line*math.div(1, 4) + strip(-$button-border-width*math.div(1, 10)), $m-medium-size);
     padding-left: em($m-gut*3, $m-medium-size);
 
     border-width: $button-border-width;
@@ -231,17 +233,17 @@ optgroup {
 
   @include min-screen(col(8)) {
     label {
-      margin-bottom: em($d-medium-line/4, $d-medium-size);
+      margin-bottom: em($d-medium-line*math.div(1, 4), $d-medium-size);
 
       @include font-size($d-medium-size, $d-medium-line);
     }
 
     input[type = "text"],
     textarea {
-      padding-top: em($d-medium-line/4 + strip(-$field-border-width/10), $d-medium-size);
-      padding-right: em($d-gut/2, $d-medium-size);
-      padding-bottom: em($d-medium-line/4 + strip(-$field-border-width/10), $d-medium-size);
-      padding-left: em($d-gut/2, $d-medium-size);
+      padding-top: em($d-medium-line*math.div(1, 4) + strip(-$field-border-width*math.div(1, 10)), $d-medium-size);
+      padding-right: em($d-gut*math.div(1, 2), $d-medium-size);
+      padding-bottom: em($d-medium-line*math.div(1, 4) + strip(-$field-border-width*math.div(1, 10)), $d-medium-size);
+      padding-left: em($d-gut*math.div(1, 2), $d-medium-size);
 
       @include font-size($d-medium-size, $d-medium-line);
     }
@@ -251,16 +253,16 @@ optgroup {
     }
 
     i {
-      margin-top: em($d-small-line/4, $d-small-size);
+      margin-top: em($d-small-line*math.div(1, 4), $d-small-size);
 
       @include font-size($d-small-size, $d-small-line);
     }
 
     input[type = "submit"] {
       height: em($d-medium-line*1.5, $d-medium-size);
-      padding-top: em($d-medium-line/4 + strip(-$button-border-width/10), $d-medium-size);
+      padding-top: em($d-medium-line*math.div(1, 4) + strip(-$button-border-width*math.div(1, 10)), $d-medium-size);
       padding-right: em($d-gut*3, $d-medium-size);
-      padding-bottom: em($d-medium-line/4 + strip(-$button-border-width/10), $d-medium-size);
+      padding-bottom: em($d-medium-line*math.div(1, 4) + strip(-$button-border-width*math.div(1, 10)), $d-medium-size);
       padding-left: em($d-gut*3, $d-medium-size);
 
       border-radius: em($d-medium-line*1.5, $d-medium-size);
@@ -279,7 +281,7 @@ optgroup {
       clear: left;
 
       width: col(4, $d-medium-size);
-      margin-top: em($d-medium-line/4, $d-medium-size);
+      margin-top: em($d-medium-line*math.div(1, 4), $d-medium-size);
       margin-left: em(-$column-width*4 -$d-gut, $d-medium-size);
 
       text-align: right;

@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /* (c) 2018 Andrea Buran [www.andreaburan.com] All rights reserved */
 
 /*
@@ -30,7 +32,7 @@
 
 @keyframes element-up {
   0% {
-    transform: translateY(em($d-base-rhythm/2));
+    transform: translateY(em($d-base-rhythm*math.div(1, 2)));
   }
   100% {
     transform: translateY(0);
@@ -39,7 +41,7 @@
 
 @keyframes element-in-up {
   0% {
-    transform: translateY(em($d-base-rhythm/2));
+    transform: translateY(em($d-base-rhythm*math.div(1, 2)));
     opacity: 0.1;
   }
   1% {
