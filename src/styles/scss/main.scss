@@ -1,69 +1,69 @@
-/*! Copyright (c) 2017 Andrea Buran [www.andreaburan.com]. All rights reserved */
+@use "copyright";
 
 /*
 ** Utilities
 */
 
-@import "utilities/colors.scss";
-@import "utilities/variables.scss";
-@import "utilities/functions.scss";
-@import "utilities/mixins.scss";
-@import "utilities/media-queries.scss";
-@import "utilities/fonts.scss";
-@import "utilities/helpers.scss";
-@import "utilities/animations.scss";
+@use "utilities/colors";
+@use "utilities/variables";
+@use "utilities/functions";
+@use "utilities/mixins";
+@use "utilities/media-queries";
+@use "utilities/fonts";
+@use "utilities/helpers";
+@use "utilities/animations";
 
 /*
 ** Basics
 */
 
-@import "basics/colors.scss";
-@import "basics/basics.scss";
-@import "basics/layout-2d.scss";
-@import "basics/layout-1d.scss";
+@use "basics/colors" as basics-colors;
+@use "basics/basics";
+@use "basics/layout-2d";
+@use "basics/layout-1d";
 
 /*
 ** Typography
 */
 
-@import "basics/typography.scss";
-@import "basics/typography-medium.scss";
-@import "basics/typography-super-large.scss";
-@import "basics/typography-large.scss";
-@import "basics/typography-small.scss";
-@import "basics/typography_colors.scss";
+@use "basics/typography";
+@use "basics/typography-medium";
+@use "basics/typography-super-large";
+@use "basics/typography-large";
+@use "basics/typography-small";
+@use "basics/typography_colors";
 
 /*
 ** Modules
 */
 
-@import "modules/header.scss";
-@import "modules/footer.scss";
-@import "modules/switches.scss";
-@import "modules/sections.scss";
-@import "modules/separators.scss";
-@import "modules/buttons.scss";
-@import "modules/splash.scss";
-@import "modules/slides.scss";
-//@import "modules/balloons.scss";
-@import "modules/figures.scss";
-@import "modules/codes_colors.scss";
-@import "modules/codes.scss";
-@import "modules/tables.scss";
-@import "modules/footnotes.scss";
-@import "modules/formations.scss";
-@import "modules/controls.scss";
-@import "modules/posts.scss";
-@import "modules/post_pagination.scss";
-@import "modules/projects.scss";
-@import "modules/jot_splash.scss";
-@import "modules/jots.scss";
-@import "modules/jots_tags.scss";
-@import "modules/links.scss";
-@import "modules/forms.scss";
+@use "modules/header";
+@use "modules/footer";
+@use "modules/switches";
+@use "modules/sections";
+@use "modules/separators";
+@use "modules/buttons";
+@use "modules/splash";
+@use "modules/slides";
+//@use "modules/balloons";
+@use "modules/figures";
+@use "modules/codes_colors";
+@use "modules/codes";
+@use "modules/tables";
+@use "modules/footnotes";
+@use "modules/formations";
+@use "modules/controls";
+@use "modules/posts";
+@use "modules/post_pagination";
+@use "modules/projects";
+@use "modules/jot_splash";
+@use "modules/jots";
+@use "modules/jots_tags";
+@use "modules/links";
+@use "modules/forms";
 
 /*
 ** Print
 */
 
-@import "print.scss";
+@use "print";

@@ -1,10 +1,14 @@
 /* Copyright (c) 2017 Andrea Buran [www.andreaburan.com]. All rights reserved */
 
+@use "sass:math";
+@use "../utilities/variables" as *;
+@use "../utilities/functions" as *;
+@use "../utilities/mixins" as *;
+@use "../utilities/media-queries" as *;
+
 /*
 ** Jots
 */
-
-@use "sass:math";
 
 .jots-items {
   padding-top: em($m-base-rhythm);

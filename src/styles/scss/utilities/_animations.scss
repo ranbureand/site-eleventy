@@ -1,6 +1,8 @@
-@use "sass:math";
-
 /* (c) 2018 Andrea Buran [www.andreaburan.com] All rights reserved */
+
+@use "sass:math";
+@use "variables" as *;
+@use "functions" as *;
 
 /*
 ** Animations

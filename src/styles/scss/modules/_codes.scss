@@ -1,10 +1,13 @@
 /* Copyright (c) 2017 Andrea Buran [www.andreaburan.com]. All rights reserved */
 
+@use "sass:math";
+@use "../utilities/variables" as *;
+@use "../utilities/functions" as *;
+@use "../utilities/media-queries" as *;
+
 /*
 ** Codes
 */
-
-@use "sass:math";
 
 [class*="code"] {
   display: flex;
