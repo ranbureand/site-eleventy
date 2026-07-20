@@ -3,8 +3,8 @@
               <blockquote class="jots-item-body {% if forloop.index <= 2 %}typo-l{% else %}typo-m{% endif %} serif" {% if jot.data.address %}cite="{{ jot.data.address }}"{% endif %}>
               {{ jot.templateContent }}
               </blockquote>
-              {%- if jot.data.site %}
-              <div class="jots-item-reference">{% if jot.data.authors.first %}{% for author in jot.data.authors %}{% if forloop.last == true %}<span>{{ author }}</span>{% else %}<span>{{ author }}</span>, {% endif %}{% endfor %}{% else %}<span>{{ jot.data.authors }}</span>{% endif %}, {% if jot.data.address %}<a href="{{ jot.data.address }}" target="_blank" title="{{ jot.data.title }}"><cite>{{ jot.data.title }}</cite></a>{% else %}<span><cite>{{ jot.data.title }}</cite></span>{% endif %}, <span>{{ jot.data.site }}</span>.</div>
+              {%- if jot.data.website %}
+              <div class="jots-item-reference">{% if jot.data.authors.first %}{% for author in jot.data.authors %}{% if forloop.last == true %}<span>{{ author }}</span>{% else %}<span>{{ author }}</span>, {% endif %}{% endfor %}{% else %}<span>{{ jot.data.authors }}</span>{% endif %}, {% if jot.data.address %}<a href="{{ jot.data.address }}" target="_blank" title="{{ jot.data.title }}"><cite>{{ jot.data.title }}</cite></a>{% else %}<span><cite>{{ jot.data.title }}</cite></span>{% endif %}, <span>{{ jot.data.website }}</span>.</div>
               {%- else %}
               <div class="jots-item-reference">{% if jot.data.authors.first %}{% for author in jot.data.authors %}{% if forloop.last == true %}<span>{{ author }}</span>{% else %}<span>{{ author }}</span>, {% endif %}{% endfor %}{% else %}<span>{{ jot.data.authors }}</span>{% endif %}, <span><cite>{{ jot.data.title }}</cite></span>, {% if jot.data.pages.first %}pp. {% for page in jot.data.pages %}{% if forloop.last == true %}<span>{{ page }}</span>{% else %}<span>{{ page }}</span>–{% endif %}{% endfor %}{% else %}p. <span>{{ jot.data.pages }}</span>{% endif %}, {{ jot.data.publisher }}, {{ jot.data.year }}.</div>
               {%- endif %}

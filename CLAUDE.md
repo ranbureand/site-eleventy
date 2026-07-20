@@ -24,7 +24,7 @@ Not yet deployed (media still to be pushed; one-time Pages setup pending).
 - `eleventy.config.js`: input `src`; passthroughs; custom filters/tags (`markdownify`, `date_to_xmlschema`, `date_to_long_string`, `slugify`/latin, `post_url` tag, `where_includes`, `no_blank_lines`); the markdown-it setup; **glob-based collections**; the `buildTime` global; and `process.env.TZ = "Europe/Rome"` pinned at the very top.
 - `lib/markdown-it-kramdown-ial.js`: the content-pipeline core (IAL plugin + Shiki fence renderer + footnote overrides; see below).
 - `lib/build-images.js`: the sharp image pipeline.
-- `src/_data/{site.json,slides.json}`; directory data `src/{posts,projects,categories,jots-data}/*.11tydata.js` set permalink + the `published:false` exclusion (layout comes from each file's own front matter).
+- `src/_data/{site.json,slides.json}`; directory data `src/{posts,projects,categories,jots}/*.11tydata.js` set permalink + the `published:false` exclusion (layout comes from each file's own front matter).
 
 **Mental model / gotchas** (differences from Jekyll that will trip you up)
 - Front matter is accessed **bare** in templates: `title` (not `page.title`), `layout`, `page.fileSlug` (not `page.slug`).

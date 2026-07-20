@@ -166,11 +166,11 @@ export default function (eleventyConfig) {
       .sort((a, b) => (a.data.order || 0) - (b.data.order || 0)),
   );
   eleventyConfig.addCollection("jots", (c) =>
-    c.getFilteredByGlob("./src/jots-data/*.md").sort((a, b) => a.date - b.date),
+    c.getFilteredByGlob("./src/jots/*.md").sort((a, b) => a.date - b.date),
   );
   eleventyConfig.addCollection("jotsByNumber", (c) =>
     c
-      .getFilteredByGlob("./src/jots-data/*.md")
+      .getFilteredByGlob("./src/jots/*.md")
       .sort((a, b) => b.data.number - a.data.number),
   );
 
@@ -180,7 +180,7 @@ export default function (eleventyConfig) {
   // is emitted in filename order, matching Jekyll's site.jots ordering (same
   // date sorts by filename, e.g. 10, 11, 8, 9).
   eleventyConfig.addCollection("jotTagIndex", (c) => {
-    const all = c.getFilteredByGlob("./src/jots-data/*.md");
+    const all = c.getFilteredByGlob("./src/jots/*.md");
     const byNumberDesc = [...all].sort((a, b) => b.data.number - a.data.number);
     const pageOf = new Map();
     byNumberDesc.forEach((jot, i) => {
